@@ -1,4 +1,4 @@
-# Install script for directory: /home/weilern/os192/ass4
+# Install script for directory: /home/weilern/os192/ass4/OS_ass4-File_System
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/weilern/os192/ass4/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

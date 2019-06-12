@@ -6,5 +6,5 @@ C_FLAGS = -g   -std=gnu11
 
 C_DEFINES = 
 
-C_INCLUDES = -I/home/weilern/os192/ass4/. 
+C_INCLUDES = -I/home/weilern/os192/ass4/OS_ass4-File_System/. 
 

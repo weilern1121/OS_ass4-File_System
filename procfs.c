@@ -113,8 +113,8 @@ int ReadFromMemInodes( char *designBuffer, int IPinum ){
     }
 
     //TEST : in this point currDirent should be == numProcs+5
-    int size = currDirent * sizeof(struct dirent);
-    return size;
+    int output = currDirent * sizeof(struct dirent);
+    return output;
 
 }
 

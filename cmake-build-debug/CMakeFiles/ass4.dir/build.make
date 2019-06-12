@@ -43,10 +43,10 @@ RM = /opt/clion-2018.3.4/bin/cmake/linux/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/weilern/os192/ass4
+CMAKE_SOURCE_DIR = /home/weilern/os192/ass4/OS_ass4-File_System
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/weilern/os192/ass4/cmake-build-debug
+CMAKE_BINARY_DIR = /home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/ass4.dir/depend.make
@@ -59,614 +59,614 @@ include CMakeFiles/ass4.dir/flags.make
 
 CMakeFiles/ass4.dir/bio.c.o: CMakeFiles/ass4.dir/flags.make
 CMakeFiles/ass4.dir/bio.c.o: ../bio.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/ass4.dir/bio.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/bio.c.o   -c /home/weilern/os192/ass4/bio.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/ass4.dir/bio.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/bio.c.o   -c /home/weilern/os192/ass4/OS_ass4-File_System/bio.c
 
 CMakeFiles/ass4.dir/bio.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ass4.dir/bio.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/bio.c > CMakeFiles/ass4.dir/bio.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/OS_ass4-File_System/bio.c > CMakeFiles/ass4.dir/bio.c.i
 
 CMakeFiles/ass4.dir/bio.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ass4.dir/bio.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/bio.c -o CMakeFiles/ass4.dir/bio.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/OS_ass4-File_System/bio.c -o CMakeFiles/ass4.dir/bio.c.s
 
 CMakeFiles/ass4.dir/bootmain.c.o: CMakeFiles/ass4.dir/flags.make
 CMakeFiles/ass4.dir/bootmain.c.o: ../bootmain.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/ass4.dir/bootmain.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/bootmain.c.o   -c /home/weilern/os192/ass4/bootmain.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/ass4.dir/bootmain.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/bootmain.c.o   -c /home/weilern/os192/ass4/OS_ass4-File_System/bootmain.c
 
 CMakeFiles/ass4.dir/bootmain.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ass4.dir/bootmain.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/bootmain.c > CMakeFiles/ass4.dir/bootmain.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/OS_ass4-File_System/bootmain.c > CMakeFiles/ass4.dir/bootmain.c.i
 
 CMakeFiles/ass4.dir/bootmain.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ass4.dir/bootmain.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/bootmain.c -o CMakeFiles/ass4.dir/bootmain.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/OS_ass4-File_System/bootmain.c -o CMakeFiles/ass4.dir/bootmain.c.s
 
 CMakeFiles/ass4.dir/cat.c.o: CMakeFiles/ass4.dir/flags.make
 CMakeFiles/ass4.dir/cat.c.o: ../cat.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/ass4.dir/cat.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/cat.c.o   -c /home/weilern/os192/ass4/cat.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/ass4.dir/cat.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/cat.c.o   -c /home/weilern/os192/ass4/OS_ass4-File_System/cat.c
 
 CMakeFiles/ass4.dir/cat.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ass4.dir/cat.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/cat.c > CMakeFiles/ass4.dir/cat.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/OS_ass4-File_System/cat.c > CMakeFiles/ass4.dir/cat.c.i
 
 CMakeFiles/ass4.dir/cat.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ass4.dir/cat.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/cat.c -o CMakeFiles/ass4.dir/cat.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/OS_ass4-File_System/cat.c -o CMakeFiles/ass4.dir/cat.c.s
 
 CMakeFiles/ass4.dir/console.c.o: CMakeFiles/ass4.dir/flags.make
 CMakeFiles/ass4.dir/console.c.o: ../console.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/ass4.dir/console.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/console.c.o   -c /home/weilern/os192/ass4/console.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/ass4.dir/console.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/console.c.o   -c /home/weilern/os192/ass4/OS_ass4-File_System/console.c
 
 CMakeFiles/ass4.dir/console.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ass4.dir/console.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/console.c > CMakeFiles/ass4.dir/console.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/OS_ass4-File_System/console.c > CMakeFiles/ass4.dir/console.c.i
 
 CMakeFiles/ass4.dir/console.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ass4.dir/console.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/console.c -o CMakeFiles/ass4.dir/console.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/OS_ass4-File_System/console.c -o CMakeFiles/ass4.dir/console.c.s
 
 CMakeFiles/ass4.dir/echo.c.o: CMakeFiles/ass4.dir/flags.make
 CMakeFiles/ass4.dir/echo.c.o: ../echo.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/ass4.dir/echo.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/echo.c.o   -c /home/weilern/os192/ass4/echo.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/ass4.dir/echo.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/echo.c.o   -c /home/weilern/os192/ass4/OS_ass4-File_System/echo.c
 
 CMakeFiles/ass4.dir/echo.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ass4.dir/echo.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/echo.c > CMakeFiles/ass4.dir/echo.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/OS_ass4-File_System/echo.c > CMakeFiles/ass4.dir/echo.c.i
 
 CMakeFiles/ass4.dir/echo.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ass4.dir/echo.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/echo.c -o CMakeFiles/ass4.dir/echo.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/OS_ass4-File_System/echo.c -o CMakeFiles/ass4.dir/echo.c.s
 
 CMakeFiles/ass4.dir/exec.c.o: CMakeFiles/ass4.dir/flags.make
 CMakeFiles/ass4.dir/exec.c.o: ../exec.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/ass4.dir/exec.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/exec.c.o   -c /home/weilern/os192/ass4/exec.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/ass4.dir/exec.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/exec.c.o   -c /home/weilern/os192/ass4/OS_ass4-File_System/exec.c
 
 CMakeFiles/ass4.dir/exec.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ass4.dir/exec.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/exec.c > CMakeFiles/ass4.dir/exec.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/OS_ass4-File_System/exec.c > CMakeFiles/ass4.dir/exec.c.i
 
 CMakeFiles/ass4.dir/exec.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ass4.dir/exec.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/exec.c -o CMakeFiles/ass4.dir/exec.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/OS_ass4-File_System/exec.c -o CMakeFiles/ass4.dir/exec.c.s
 
 CMakeFiles/ass4.dir/file.c.o: CMakeFiles/ass4.dir/flags.make
 CMakeFiles/ass4.dir/file.c.o: ../file.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/ass4.dir/file.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/file.c.o   -c /home/weilern/os192/ass4/file.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/ass4.dir/file.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/file.c.o   -c /home/weilern/os192/ass4/OS_ass4-File_System/file.c
 
 CMakeFiles/ass4.dir/file.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ass4.dir/file.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/file.c > CMakeFiles/ass4.dir/file.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/OS_ass4-File_System/file.c > CMakeFiles/ass4.dir/file.c.i
 
 CMakeFiles/ass4.dir/file.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ass4.dir/file.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/file.c -o CMakeFiles/ass4.dir/file.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/OS_ass4-File_System/file.c -o CMakeFiles/ass4.dir/file.c.s
 
 CMakeFiles/ass4.dir/forktest.c.o: CMakeFiles/ass4.dir/flags.make
 CMakeFiles/ass4.dir/forktest.c.o: ../forktest.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/ass4.dir/forktest.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/forktest.c.o   -c /home/weilern/os192/ass4/forktest.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/ass4.dir/forktest.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/forktest.c.o   -c /home/weilern/os192/ass4/OS_ass4-File_System/forktest.c
 
 CMakeFiles/ass4.dir/forktest.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ass4.dir/forktest.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/forktest.c > CMakeFiles/ass4.dir/forktest.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/OS_ass4-File_System/forktest.c > CMakeFiles/ass4.dir/forktest.c.i
 
 CMakeFiles/ass4.dir/forktest.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ass4.dir/forktest.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/forktest.c -o CMakeFiles/ass4.dir/forktest.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/OS_ass4-File_System/forktest.c -o CMakeFiles/ass4.dir/forktest.c.s
 
 CMakeFiles/ass4.dir/fs.c.o: CMakeFiles/ass4.dir/flags.make
 CMakeFiles/ass4.dir/fs.c.o: ../fs.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/ass4.dir/fs.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/fs.c.o   -c /home/weilern/os192/ass4/fs.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/ass4.dir/fs.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/fs.c.o   -c /home/weilern/os192/ass4/OS_ass4-File_System/fs.c
 
 CMakeFiles/ass4.dir/fs.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ass4.dir/fs.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/fs.c > CMakeFiles/ass4.dir/fs.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/OS_ass4-File_System/fs.c > CMakeFiles/ass4.dir/fs.c.i
 
 CMakeFiles/ass4.dir/fs.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ass4.dir/fs.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/fs.c -o CMakeFiles/ass4.dir/fs.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/OS_ass4-File_System/fs.c -o CMakeFiles/ass4.dir/fs.c.s
 
 CMakeFiles/ass4.dir/grep.c.o: CMakeFiles/ass4.dir/flags.make
 CMakeFiles/ass4.dir/grep.c.o: ../grep.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/ass4.dir/grep.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/grep.c.o   -c /home/weilern/os192/ass4/grep.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/ass4.dir/grep.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/grep.c.o   -c /home/weilern/os192/ass4/OS_ass4-File_System/grep.c
 
 CMakeFiles/ass4.dir/grep.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ass4.dir/grep.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/grep.c > CMakeFiles/ass4.dir/grep.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/OS_ass4-File_System/grep.c > CMakeFiles/ass4.dir/grep.c.i
 
 CMakeFiles/ass4.dir/grep.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ass4.dir/grep.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/grep.c -o CMakeFiles/ass4.dir/grep.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/OS_ass4-File_System/grep.c -o CMakeFiles/ass4.dir/grep.c.s
 
 CMakeFiles/ass4.dir/ide.c.o: CMakeFiles/ass4.dir/flags.make
 CMakeFiles/ass4.dir/ide.c.o: ../ide.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/ass4.dir/ide.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/ide.c.o   -c /home/weilern/os192/ass4/ide.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/ass4.dir/ide.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/ide.c.o   -c /home/weilern/os192/ass4/OS_ass4-File_System/ide.c
 
 CMakeFiles/ass4.dir/ide.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ass4.dir/ide.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/ide.c > CMakeFiles/ass4.dir/ide.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/OS_ass4-File_System/ide.c > CMakeFiles/ass4.dir/ide.c.i
 
 CMakeFiles/ass4.dir/ide.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ass4.dir/ide.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/ide.c -o CMakeFiles/ass4.dir/ide.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/OS_ass4-File_System/ide.c -o CMakeFiles/ass4.dir/ide.c.s
 
 CMakeFiles/ass4.dir/init.c.o: CMakeFiles/ass4.dir/flags.make
 CMakeFiles/ass4.dir/init.c.o: ../init.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/ass4.dir/init.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/init.c.o   -c /home/weilern/os192/ass4/init.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/ass4.dir/init.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/init.c.o   -c /home/weilern/os192/ass4/OS_ass4-File_System/init.c
 
 CMakeFiles/ass4.dir/init.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ass4.dir/init.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/init.c > CMakeFiles/ass4.dir/init.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/OS_ass4-File_System/init.c > CMakeFiles/ass4.dir/init.c.i
 
 CMakeFiles/ass4.dir/init.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ass4.dir/init.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/init.c -o CMakeFiles/ass4.dir/init.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/OS_ass4-File_System/init.c -o CMakeFiles/ass4.dir/init.c.s
 
 CMakeFiles/ass4.dir/ioapic.c.o: CMakeFiles/ass4.dir/flags.make
 CMakeFiles/ass4.dir/ioapic.c.o: ../ioapic.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/ass4.dir/ioapic.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/ioapic.c.o   -c /home/weilern/os192/ass4/ioapic.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/ass4.dir/ioapic.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/ioapic.c.o   -c /home/weilern/os192/ass4/OS_ass4-File_System/ioapic.c
 
 CMakeFiles/ass4.dir/ioapic.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ass4.dir/ioapic.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/ioapic.c > CMakeFiles/ass4.dir/ioapic.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/OS_ass4-File_System/ioapic.c > CMakeFiles/ass4.dir/ioapic.c.i
 
 CMakeFiles/ass4.dir/ioapic.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ass4.dir/ioapic.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/ioapic.c -o CMakeFiles/ass4.dir/ioapic.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/OS_ass4-File_System/ioapic.c -o CMakeFiles/ass4.dir/ioapic.c.s
 
 CMakeFiles/ass4.dir/kalloc.c.o: CMakeFiles/ass4.dir/flags.make
 CMakeFiles/ass4.dir/kalloc.c.o: ../kalloc.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/ass4.dir/kalloc.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/kalloc.c.o   -c /home/weilern/os192/ass4/kalloc.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/ass4.dir/kalloc.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/kalloc.c.o   -c /home/weilern/os192/ass4/OS_ass4-File_System/kalloc.c
 
 CMakeFiles/ass4.dir/kalloc.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ass4.dir/kalloc.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/kalloc.c > CMakeFiles/ass4.dir/kalloc.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/OS_ass4-File_System/kalloc.c > CMakeFiles/ass4.dir/kalloc.c.i
 
 CMakeFiles/ass4.dir/kalloc.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ass4.dir/kalloc.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/kalloc.c -o CMakeFiles/ass4.dir/kalloc.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/OS_ass4-File_System/kalloc.c -o CMakeFiles/ass4.dir/kalloc.c.s
 
 CMakeFiles/ass4.dir/kbd.c.o: CMakeFiles/ass4.dir/flags.make
 CMakeFiles/ass4.dir/kbd.c.o: ../kbd.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/ass4.dir/kbd.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/kbd.c.o   -c /home/weilern/os192/ass4/kbd.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/ass4.dir/kbd.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/kbd.c.o   -c /home/weilern/os192/ass4/OS_ass4-File_System/kbd.c
 
 CMakeFiles/ass4.dir/kbd.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ass4.dir/kbd.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/kbd.c > CMakeFiles/ass4.dir/kbd.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/OS_ass4-File_System/kbd.c > CMakeFiles/ass4.dir/kbd.c.i
 
 CMakeFiles/ass4.dir/kbd.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ass4.dir/kbd.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/kbd.c -o CMakeFiles/ass4.dir/kbd.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/OS_ass4-File_System/kbd.c -o CMakeFiles/ass4.dir/kbd.c.s
 
 CMakeFiles/ass4.dir/kill.c.o: CMakeFiles/ass4.dir/flags.make
 CMakeFiles/ass4.dir/kill.c.o: ../kill.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/ass4.dir/kill.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/kill.c.o   -c /home/weilern/os192/ass4/kill.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/ass4.dir/kill.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/kill.c.o   -c /home/weilern/os192/ass4/OS_ass4-File_System/kill.c
 
 CMakeFiles/ass4.dir/kill.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ass4.dir/kill.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/kill.c > CMakeFiles/ass4.dir/kill.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/OS_ass4-File_System/kill.c > CMakeFiles/ass4.dir/kill.c.i
 
 CMakeFiles/ass4.dir/kill.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ass4.dir/kill.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/kill.c -o CMakeFiles/ass4.dir/kill.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/OS_ass4-File_System/kill.c -o CMakeFiles/ass4.dir/kill.c.s
 
 CMakeFiles/ass4.dir/lapic.c.o: CMakeFiles/ass4.dir/flags.make
 CMakeFiles/ass4.dir/lapic.c.o: ../lapic.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/ass4.dir/lapic.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/lapic.c.o   -c /home/weilern/os192/ass4/lapic.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/ass4.dir/lapic.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/lapic.c.o   -c /home/weilern/os192/ass4/OS_ass4-File_System/lapic.c
 
 CMakeFiles/ass4.dir/lapic.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ass4.dir/lapic.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/lapic.c > CMakeFiles/ass4.dir/lapic.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/OS_ass4-File_System/lapic.c > CMakeFiles/ass4.dir/lapic.c.i
 
 CMakeFiles/ass4.dir/lapic.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ass4.dir/lapic.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/lapic.c -o CMakeFiles/ass4.dir/lapic.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/OS_ass4-File_System/lapic.c -o CMakeFiles/ass4.dir/lapic.c.s
 
 CMakeFiles/ass4.dir/ln.c.o: CMakeFiles/ass4.dir/flags.make
 CMakeFiles/ass4.dir/ln.c.o: ../ln.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/ass4.dir/ln.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/ln.c.o   -c /home/weilern/os192/ass4/ln.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/ass4.dir/ln.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/ln.c.o   -c /home/weilern/os192/ass4/OS_ass4-File_System/ln.c
 
 CMakeFiles/ass4.dir/ln.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ass4.dir/ln.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/ln.c > CMakeFiles/ass4.dir/ln.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/OS_ass4-File_System/ln.c > CMakeFiles/ass4.dir/ln.c.i
 
 CMakeFiles/ass4.dir/ln.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ass4.dir/ln.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/ln.c -o CMakeFiles/ass4.dir/ln.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/OS_ass4-File_System/ln.c -o CMakeFiles/ass4.dir/ln.c.s
 
 CMakeFiles/ass4.dir/log.c.o: CMakeFiles/ass4.dir/flags.make
 CMakeFiles/ass4.dir/log.c.o: ../log.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/ass4.dir/log.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/log.c.o   -c /home/weilern/os192/ass4/log.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/ass4.dir/log.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/log.c.o   -c /home/weilern/os192/ass4/OS_ass4-File_System/log.c
 
 CMakeFiles/ass4.dir/log.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ass4.dir/log.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/log.c > CMakeFiles/ass4.dir/log.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/OS_ass4-File_System/log.c > CMakeFiles/ass4.dir/log.c.i
 
 CMakeFiles/ass4.dir/log.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ass4.dir/log.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/log.c -o CMakeFiles/ass4.dir/log.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/OS_ass4-File_System/log.c -o CMakeFiles/ass4.dir/log.c.s
 
 CMakeFiles/ass4.dir/ls.c.o: CMakeFiles/ass4.dir/flags.make
 CMakeFiles/ass4.dir/ls.c.o: ../ls.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/ass4.dir/ls.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/ls.c.o   -c /home/weilern/os192/ass4/ls.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/ass4.dir/ls.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/ls.c.o   -c /home/weilern/os192/ass4/OS_ass4-File_System/ls.c
 
 CMakeFiles/ass4.dir/ls.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ass4.dir/ls.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/ls.c > CMakeFiles/ass4.dir/ls.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/OS_ass4-File_System/ls.c > CMakeFiles/ass4.dir/ls.c.i
 
 CMakeFiles/ass4.dir/ls.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ass4.dir/ls.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/ls.c -o CMakeFiles/ass4.dir/ls.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/OS_ass4-File_System/ls.c -o CMakeFiles/ass4.dir/ls.c.s
 
 CMakeFiles/ass4.dir/main.c.o: CMakeFiles/ass4.dir/flags.make
 CMakeFiles/ass4.dir/main.c.o: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/ass4.dir/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/main.c.o   -c /home/weilern/os192/ass4/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/ass4.dir/main.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/main.c.o   -c /home/weilern/os192/ass4/OS_ass4-File_System/main.c
 
 CMakeFiles/ass4.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ass4.dir/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/main.c > CMakeFiles/ass4.dir/main.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/OS_ass4-File_System/main.c > CMakeFiles/ass4.dir/main.c.i
 
 CMakeFiles/ass4.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ass4.dir/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/main.c -o CMakeFiles/ass4.dir/main.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/OS_ass4-File_System/main.c -o CMakeFiles/ass4.dir/main.c.s
 
 CMakeFiles/ass4.dir/memide.c.o: CMakeFiles/ass4.dir/flags.make
 CMakeFiles/ass4.dir/memide.c.o: ../memide.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/ass4.dir/memide.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/memide.c.o   -c /home/weilern/os192/ass4/memide.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/ass4.dir/memide.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/memide.c.o   -c /home/weilern/os192/ass4/OS_ass4-File_System/memide.c
 
 CMakeFiles/ass4.dir/memide.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ass4.dir/memide.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/memide.c > CMakeFiles/ass4.dir/memide.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/OS_ass4-File_System/memide.c > CMakeFiles/ass4.dir/memide.c.i
 
 CMakeFiles/ass4.dir/memide.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ass4.dir/memide.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/memide.c -o CMakeFiles/ass4.dir/memide.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/OS_ass4-File_System/memide.c -o CMakeFiles/ass4.dir/memide.c.s
 
 CMakeFiles/ass4.dir/mkdir.c.o: CMakeFiles/ass4.dir/flags.make
 CMakeFiles/ass4.dir/mkdir.c.o: ../mkdir.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/ass4.dir/mkdir.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/mkdir.c.o   -c /home/weilern/os192/ass4/mkdir.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/ass4.dir/mkdir.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/mkdir.c.o   -c /home/weilern/os192/ass4/OS_ass4-File_System/mkdir.c
 
 CMakeFiles/ass4.dir/mkdir.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ass4.dir/mkdir.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/mkdir.c > CMakeFiles/ass4.dir/mkdir.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/OS_ass4-File_System/mkdir.c > CMakeFiles/ass4.dir/mkdir.c.i
 
 CMakeFiles/ass4.dir/mkdir.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ass4.dir/mkdir.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/mkdir.c -o CMakeFiles/ass4.dir/mkdir.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/OS_ass4-File_System/mkdir.c -o CMakeFiles/ass4.dir/mkdir.c.s
 
 CMakeFiles/ass4.dir/mkfs.c.o: CMakeFiles/ass4.dir/flags.make
 CMakeFiles/ass4.dir/mkfs.c.o: ../mkfs.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/ass4.dir/mkfs.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/mkfs.c.o   -c /home/weilern/os192/ass4/mkfs.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/ass4.dir/mkfs.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/mkfs.c.o   -c /home/weilern/os192/ass4/OS_ass4-File_System/mkfs.c
 
 CMakeFiles/ass4.dir/mkfs.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ass4.dir/mkfs.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/mkfs.c > CMakeFiles/ass4.dir/mkfs.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/OS_ass4-File_System/mkfs.c > CMakeFiles/ass4.dir/mkfs.c.i
 
 CMakeFiles/ass4.dir/mkfs.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ass4.dir/mkfs.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/mkfs.c -o CMakeFiles/ass4.dir/mkfs.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/OS_ass4-File_System/mkfs.c -o CMakeFiles/ass4.dir/mkfs.c.s
 
 CMakeFiles/ass4.dir/mp.c.o: CMakeFiles/ass4.dir/flags.make
 CMakeFiles/ass4.dir/mp.c.o: ../mp.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/ass4.dir/mp.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/mp.c.o   -c /home/weilern/os192/ass4/mp.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/ass4.dir/mp.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/mp.c.o   -c /home/weilern/os192/ass4/OS_ass4-File_System/mp.c
 
 CMakeFiles/ass4.dir/mp.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ass4.dir/mp.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/mp.c > CMakeFiles/ass4.dir/mp.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/OS_ass4-File_System/mp.c > CMakeFiles/ass4.dir/mp.c.i
 
 CMakeFiles/ass4.dir/mp.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ass4.dir/mp.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/mp.c -o CMakeFiles/ass4.dir/mp.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/OS_ass4-File_System/mp.c -o CMakeFiles/ass4.dir/mp.c.s
 
 CMakeFiles/ass4.dir/picirq.c.o: CMakeFiles/ass4.dir/flags.make
 CMakeFiles/ass4.dir/picirq.c.o: ../picirq.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/ass4.dir/picirq.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/picirq.c.o   -c /home/weilern/os192/ass4/picirq.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/ass4.dir/picirq.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/picirq.c.o   -c /home/weilern/os192/ass4/OS_ass4-File_System/picirq.c
 
 CMakeFiles/ass4.dir/picirq.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ass4.dir/picirq.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/picirq.c > CMakeFiles/ass4.dir/picirq.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/OS_ass4-File_System/picirq.c > CMakeFiles/ass4.dir/picirq.c.i
 
 CMakeFiles/ass4.dir/picirq.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ass4.dir/picirq.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/picirq.c -o CMakeFiles/ass4.dir/picirq.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/OS_ass4-File_System/picirq.c -o CMakeFiles/ass4.dir/picirq.c.s
 
 CMakeFiles/ass4.dir/pipe.c.o: CMakeFiles/ass4.dir/flags.make
 CMakeFiles/ass4.dir/pipe.c.o: ../pipe.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/ass4.dir/pipe.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/pipe.c.o   -c /home/weilern/os192/ass4/pipe.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/ass4.dir/pipe.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/pipe.c.o   -c /home/weilern/os192/ass4/OS_ass4-File_System/pipe.c
 
 CMakeFiles/ass4.dir/pipe.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ass4.dir/pipe.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/pipe.c > CMakeFiles/ass4.dir/pipe.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/OS_ass4-File_System/pipe.c > CMakeFiles/ass4.dir/pipe.c.i
 
 CMakeFiles/ass4.dir/pipe.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ass4.dir/pipe.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/pipe.c -o CMakeFiles/ass4.dir/pipe.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/OS_ass4-File_System/pipe.c -o CMakeFiles/ass4.dir/pipe.c.s
 
 CMakeFiles/ass4.dir/printf.c.o: CMakeFiles/ass4.dir/flags.make
 CMakeFiles/ass4.dir/printf.c.o: ../printf.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/ass4.dir/printf.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/printf.c.o   -c /home/weilern/os192/ass4/printf.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/ass4.dir/printf.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/printf.c.o   -c /home/weilern/os192/ass4/OS_ass4-File_System/printf.c
 
 CMakeFiles/ass4.dir/printf.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ass4.dir/printf.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/printf.c > CMakeFiles/ass4.dir/printf.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/OS_ass4-File_System/printf.c > CMakeFiles/ass4.dir/printf.c.i
 
 CMakeFiles/ass4.dir/printf.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ass4.dir/printf.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/printf.c -o CMakeFiles/ass4.dir/printf.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/OS_ass4-File_System/printf.c -o CMakeFiles/ass4.dir/printf.c.s
 
 CMakeFiles/ass4.dir/proc.c.o: CMakeFiles/ass4.dir/flags.make
 CMakeFiles/ass4.dir/proc.c.o: ../proc.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object CMakeFiles/ass4.dir/proc.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/proc.c.o   -c /home/weilern/os192/ass4/proc.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object CMakeFiles/ass4.dir/proc.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/proc.c.o   -c /home/weilern/os192/ass4/OS_ass4-File_System/proc.c
 
 CMakeFiles/ass4.dir/proc.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ass4.dir/proc.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/proc.c > CMakeFiles/ass4.dir/proc.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/OS_ass4-File_System/proc.c > CMakeFiles/ass4.dir/proc.c.i
 
 CMakeFiles/ass4.dir/proc.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ass4.dir/proc.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/proc.c -o CMakeFiles/ass4.dir/proc.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/OS_ass4-File_System/proc.c -o CMakeFiles/ass4.dir/proc.c.s
 
 CMakeFiles/ass4.dir/procfs.c.o: CMakeFiles/ass4.dir/flags.make
 CMakeFiles/ass4.dir/procfs.c.o: ../procfs.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building C object CMakeFiles/ass4.dir/procfs.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/procfs.c.o   -c /home/weilern/os192/ass4/procfs.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building C object CMakeFiles/ass4.dir/procfs.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/procfs.c.o   -c /home/weilern/os192/ass4/OS_ass4-File_System/procfs.c
 
 CMakeFiles/ass4.dir/procfs.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ass4.dir/procfs.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/procfs.c > CMakeFiles/ass4.dir/procfs.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/OS_ass4-File_System/procfs.c > CMakeFiles/ass4.dir/procfs.c.i
 
 CMakeFiles/ass4.dir/procfs.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ass4.dir/procfs.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/procfs.c -o CMakeFiles/ass4.dir/procfs.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/OS_ass4-File_System/procfs.c -o CMakeFiles/ass4.dir/procfs.c.s
 
 CMakeFiles/ass4.dir/rm.c.o: CMakeFiles/ass4.dir/flags.make
 CMakeFiles/ass4.dir/rm.c.o: ../rm.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object CMakeFiles/ass4.dir/rm.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/rm.c.o   -c /home/weilern/os192/ass4/rm.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object CMakeFiles/ass4.dir/rm.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/rm.c.o   -c /home/weilern/os192/ass4/OS_ass4-File_System/rm.c
 
 CMakeFiles/ass4.dir/rm.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ass4.dir/rm.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/rm.c > CMakeFiles/ass4.dir/rm.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/OS_ass4-File_System/rm.c > CMakeFiles/ass4.dir/rm.c.i
 
 CMakeFiles/ass4.dir/rm.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ass4.dir/rm.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/rm.c -o CMakeFiles/ass4.dir/rm.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/OS_ass4-File_System/rm.c -o CMakeFiles/ass4.dir/rm.c.s
 
 CMakeFiles/ass4.dir/sh.c.o: CMakeFiles/ass4.dir/flags.make
 CMakeFiles/ass4.dir/sh.c.o: ../sh.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building C object CMakeFiles/ass4.dir/sh.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/sh.c.o   -c /home/weilern/os192/ass4/sh.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building C object CMakeFiles/ass4.dir/sh.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/sh.c.o   -c /home/weilern/os192/ass4/OS_ass4-File_System/sh.c
 
 CMakeFiles/ass4.dir/sh.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ass4.dir/sh.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/sh.c > CMakeFiles/ass4.dir/sh.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/OS_ass4-File_System/sh.c > CMakeFiles/ass4.dir/sh.c.i
 
 CMakeFiles/ass4.dir/sh.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ass4.dir/sh.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/sh.c -o CMakeFiles/ass4.dir/sh.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/OS_ass4-File_System/sh.c -o CMakeFiles/ass4.dir/sh.c.s
 
 CMakeFiles/ass4.dir/sleeplock.c.o: CMakeFiles/ass4.dir/flags.make
 CMakeFiles/ass4.dir/sleeplock.c.o: ../sleeplock.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building C object CMakeFiles/ass4.dir/sleeplock.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/sleeplock.c.o   -c /home/weilern/os192/ass4/sleeplock.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building C object CMakeFiles/ass4.dir/sleeplock.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/sleeplock.c.o   -c /home/weilern/os192/ass4/OS_ass4-File_System/sleeplock.c
 
 CMakeFiles/ass4.dir/sleeplock.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ass4.dir/sleeplock.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/sleeplock.c > CMakeFiles/ass4.dir/sleeplock.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/OS_ass4-File_System/sleeplock.c > CMakeFiles/ass4.dir/sleeplock.c.i
 
 CMakeFiles/ass4.dir/sleeplock.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ass4.dir/sleeplock.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/sleeplock.c -o CMakeFiles/ass4.dir/sleeplock.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/OS_ass4-File_System/sleeplock.c -o CMakeFiles/ass4.dir/sleeplock.c.s
 
 CMakeFiles/ass4.dir/spinlock.c.o: CMakeFiles/ass4.dir/flags.make
 CMakeFiles/ass4.dir/spinlock.c.o: ../spinlock.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building C object CMakeFiles/ass4.dir/spinlock.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/spinlock.c.o   -c /home/weilern/os192/ass4/spinlock.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building C object CMakeFiles/ass4.dir/spinlock.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/spinlock.c.o   -c /home/weilern/os192/ass4/OS_ass4-File_System/spinlock.c
 
 CMakeFiles/ass4.dir/spinlock.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ass4.dir/spinlock.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/spinlock.c > CMakeFiles/ass4.dir/spinlock.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/OS_ass4-File_System/spinlock.c > CMakeFiles/ass4.dir/spinlock.c.i
 
 CMakeFiles/ass4.dir/spinlock.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ass4.dir/spinlock.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/spinlock.c -o CMakeFiles/ass4.dir/spinlock.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/OS_ass4-File_System/spinlock.c -o CMakeFiles/ass4.dir/spinlock.c.s
 
 CMakeFiles/ass4.dir/stressfs.c.o: CMakeFiles/ass4.dir/flags.make
 CMakeFiles/ass4.dir/stressfs.c.o: ../stressfs.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building C object CMakeFiles/ass4.dir/stressfs.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/stressfs.c.o   -c /home/weilern/os192/ass4/stressfs.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building C object CMakeFiles/ass4.dir/stressfs.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/stressfs.c.o   -c /home/weilern/os192/ass4/OS_ass4-File_System/stressfs.c
 
 CMakeFiles/ass4.dir/stressfs.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ass4.dir/stressfs.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/stressfs.c > CMakeFiles/ass4.dir/stressfs.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/OS_ass4-File_System/stressfs.c > CMakeFiles/ass4.dir/stressfs.c.i
 
 CMakeFiles/ass4.dir/stressfs.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ass4.dir/stressfs.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/stressfs.c -o CMakeFiles/ass4.dir/stressfs.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/OS_ass4-File_System/stressfs.c -o CMakeFiles/ass4.dir/stressfs.c.s
 
 CMakeFiles/ass4.dir/string.c.o: CMakeFiles/ass4.dir/flags.make
 CMakeFiles/ass4.dir/string.c.o: ../string.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building C object CMakeFiles/ass4.dir/string.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/string.c.o   -c /home/weilern/os192/ass4/string.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building C object CMakeFiles/ass4.dir/string.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/string.c.o   -c /home/weilern/os192/ass4/OS_ass4-File_System/string.c
 
 CMakeFiles/ass4.dir/string.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ass4.dir/string.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/string.c > CMakeFiles/ass4.dir/string.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/OS_ass4-File_System/string.c > CMakeFiles/ass4.dir/string.c.i
 
 CMakeFiles/ass4.dir/string.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ass4.dir/string.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/string.c -o CMakeFiles/ass4.dir/string.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/OS_ass4-File_System/string.c -o CMakeFiles/ass4.dir/string.c.s
 
 CMakeFiles/ass4.dir/syscall.c.o: CMakeFiles/ass4.dir/flags.make
 CMakeFiles/ass4.dir/syscall.c.o: ../syscall.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building C object CMakeFiles/ass4.dir/syscall.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/syscall.c.o   -c /home/weilern/os192/ass4/syscall.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building C object CMakeFiles/ass4.dir/syscall.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/syscall.c.o   -c /home/weilern/os192/ass4/OS_ass4-File_System/syscall.c
 
 CMakeFiles/ass4.dir/syscall.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ass4.dir/syscall.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/syscall.c > CMakeFiles/ass4.dir/syscall.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/OS_ass4-File_System/syscall.c > CMakeFiles/ass4.dir/syscall.c.i
 
 CMakeFiles/ass4.dir/syscall.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ass4.dir/syscall.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/syscall.c -o CMakeFiles/ass4.dir/syscall.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/OS_ass4-File_System/syscall.c -o CMakeFiles/ass4.dir/syscall.c.s
 
 CMakeFiles/ass4.dir/sysfile.c.o: CMakeFiles/ass4.dir/flags.make
 CMakeFiles/ass4.dir/sysfile.c.o: ../sysfile.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building C object CMakeFiles/ass4.dir/sysfile.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/sysfile.c.o   -c /home/weilern/os192/ass4/sysfile.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building C object CMakeFiles/ass4.dir/sysfile.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/sysfile.c.o   -c /home/weilern/os192/ass4/OS_ass4-File_System/sysfile.c
 
 CMakeFiles/ass4.dir/sysfile.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ass4.dir/sysfile.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/sysfile.c > CMakeFiles/ass4.dir/sysfile.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/OS_ass4-File_System/sysfile.c > CMakeFiles/ass4.dir/sysfile.c.i
 
 CMakeFiles/ass4.dir/sysfile.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ass4.dir/sysfile.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/sysfile.c -o CMakeFiles/ass4.dir/sysfile.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/OS_ass4-File_System/sysfile.c -o CMakeFiles/ass4.dir/sysfile.c.s
 
 CMakeFiles/ass4.dir/sysproc.c.o: CMakeFiles/ass4.dir/flags.make
 CMakeFiles/ass4.dir/sysproc.c.o: ../sysproc.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building C object CMakeFiles/ass4.dir/sysproc.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/sysproc.c.o   -c /home/weilern/os192/ass4/sysproc.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building C object CMakeFiles/ass4.dir/sysproc.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/sysproc.c.o   -c /home/weilern/os192/ass4/OS_ass4-File_System/sysproc.c
 
 CMakeFiles/ass4.dir/sysproc.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ass4.dir/sysproc.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/sysproc.c > CMakeFiles/ass4.dir/sysproc.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/OS_ass4-File_System/sysproc.c > CMakeFiles/ass4.dir/sysproc.c.i
 
 CMakeFiles/ass4.dir/sysproc.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ass4.dir/sysproc.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/sysproc.c -o CMakeFiles/ass4.dir/sysproc.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/OS_ass4-File_System/sysproc.c -o CMakeFiles/ass4.dir/sysproc.c.s
 
 CMakeFiles/ass4.dir/trap.c.o: CMakeFiles/ass4.dir/flags.make
 CMakeFiles/ass4.dir/trap.c.o: ../trap.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building C object CMakeFiles/ass4.dir/trap.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/trap.c.o   -c /home/weilern/os192/ass4/trap.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building C object CMakeFiles/ass4.dir/trap.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/trap.c.o   -c /home/weilern/os192/ass4/OS_ass4-File_System/trap.c
 
 CMakeFiles/ass4.dir/trap.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ass4.dir/trap.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/trap.c > CMakeFiles/ass4.dir/trap.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/OS_ass4-File_System/trap.c > CMakeFiles/ass4.dir/trap.c.i
 
 CMakeFiles/ass4.dir/trap.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ass4.dir/trap.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/trap.c -o CMakeFiles/ass4.dir/trap.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/OS_ass4-File_System/trap.c -o CMakeFiles/ass4.dir/trap.c.s
 
 CMakeFiles/ass4.dir/uart.c.o: CMakeFiles/ass4.dir/flags.make
 CMakeFiles/ass4.dir/uart.c.o: ../uart.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building C object CMakeFiles/ass4.dir/uart.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/uart.c.o   -c /home/weilern/os192/ass4/uart.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building C object CMakeFiles/ass4.dir/uart.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/uart.c.o   -c /home/weilern/os192/ass4/OS_ass4-File_System/uart.c
 
 CMakeFiles/ass4.dir/uart.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ass4.dir/uart.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/uart.c > CMakeFiles/ass4.dir/uart.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/OS_ass4-File_System/uart.c > CMakeFiles/ass4.dir/uart.c.i
 
 CMakeFiles/ass4.dir/uart.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ass4.dir/uart.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/uart.c -o CMakeFiles/ass4.dir/uart.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/OS_ass4-File_System/uart.c -o CMakeFiles/ass4.dir/uart.c.s
 
 CMakeFiles/ass4.dir/ulib.c.o: CMakeFiles/ass4.dir/flags.make
 CMakeFiles/ass4.dir/ulib.c.o: ../ulib.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building C object CMakeFiles/ass4.dir/ulib.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/ulib.c.o   -c /home/weilern/os192/ass4/ulib.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building C object CMakeFiles/ass4.dir/ulib.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/ulib.c.o   -c /home/weilern/os192/ass4/OS_ass4-File_System/ulib.c
 
 CMakeFiles/ass4.dir/ulib.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ass4.dir/ulib.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/ulib.c > CMakeFiles/ass4.dir/ulib.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/OS_ass4-File_System/ulib.c > CMakeFiles/ass4.dir/ulib.c.i
 
 CMakeFiles/ass4.dir/ulib.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ass4.dir/ulib.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/ulib.c -o CMakeFiles/ass4.dir/ulib.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/OS_ass4-File_System/ulib.c -o CMakeFiles/ass4.dir/ulib.c.s
 
 CMakeFiles/ass4.dir/umalloc.c.o: CMakeFiles/ass4.dir/flags.make
 CMakeFiles/ass4.dir/umalloc.c.o: ../umalloc.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building C object CMakeFiles/ass4.dir/umalloc.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/umalloc.c.o   -c /home/weilern/os192/ass4/umalloc.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building C object CMakeFiles/ass4.dir/umalloc.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/umalloc.c.o   -c /home/weilern/os192/ass4/OS_ass4-File_System/umalloc.c
 
 CMakeFiles/ass4.dir/umalloc.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ass4.dir/umalloc.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/umalloc.c > CMakeFiles/ass4.dir/umalloc.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/OS_ass4-File_System/umalloc.c > CMakeFiles/ass4.dir/umalloc.c.i
 
 CMakeFiles/ass4.dir/umalloc.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ass4.dir/umalloc.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/umalloc.c -o CMakeFiles/ass4.dir/umalloc.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/OS_ass4-File_System/umalloc.c -o CMakeFiles/ass4.dir/umalloc.c.s
 
 CMakeFiles/ass4.dir/usertests.c.o: CMakeFiles/ass4.dir/flags.make
 CMakeFiles/ass4.dir/usertests.c.o: ../usertests.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building C object CMakeFiles/ass4.dir/usertests.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/usertests.c.o   -c /home/weilern/os192/ass4/usertests.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building C object CMakeFiles/ass4.dir/usertests.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/usertests.c.o   -c /home/weilern/os192/ass4/OS_ass4-File_System/usertests.c
 
 CMakeFiles/ass4.dir/usertests.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ass4.dir/usertests.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/usertests.c > CMakeFiles/ass4.dir/usertests.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/OS_ass4-File_System/usertests.c > CMakeFiles/ass4.dir/usertests.c.i
 
 CMakeFiles/ass4.dir/usertests.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ass4.dir/usertests.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/usertests.c -o CMakeFiles/ass4.dir/usertests.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/OS_ass4-File_System/usertests.c -o CMakeFiles/ass4.dir/usertests.c.s
 
 CMakeFiles/ass4.dir/vm.c.o: CMakeFiles/ass4.dir/flags.make
 CMakeFiles/ass4.dir/vm.c.o: ../vm.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building C object CMakeFiles/ass4.dir/vm.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/vm.c.o   -c /home/weilern/os192/ass4/vm.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building C object CMakeFiles/ass4.dir/vm.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/vm.c.o   -c /home/weilern/os192/ass4/OS_ass4-File_System/vm.c
 
 CMakeFiles/ass4.dir/vm.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ass4.dir/vm.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/vm.c > CMakeFiles/ass4.dir/vm.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/OS_ass4-File_System/vm.c > CMakeFiles/ass4.dir/vm.c.i
 
 CMakeFiles/ass4.dir/vm.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ass4.dir/vm.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/vm.c -o CMakeFiles/ass4.dir/vm.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/OS_ass4-File_System/vm.c -o CMakeFiles/ass4.dir/vm.c.s
 
 CMakeFiles/ass4.dir/wc.c.o: CMakeFiles/ass4.dir/flags.make
 CMakeFiles/ass4.dir/wc.c.o: ../wc.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building C object CMakeFiles/ass4.dir/wc.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/wc.c.o   -c /home/weilern/os192/ass4/wc.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building C object CMakeFiles/ass4.dir/wc.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/wc.c.o   -c /home/weilern/os192/ass4/OS_ass4-File_System/wc.c
 
 CMakeFiles/ass4.dir/wc.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ass4.dir/wc.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/wc.c > CMakeFiles/ass4.dir/wc.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/OS_ass4-File_System/wc.c > CMakeFiles/ass4.dir/wc.c.i
 
 CMakeFiles/ass4.dir/wc.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ass4.dir/wc.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/wc.c -o CMakeFiles/ass4.dir/wc.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/OS_ass4-File_System/wc.c -o CMakeFiles/ass4.dir/wc.c.s
 
 CMakeFiles/ass4.dir/zombie.c.o: CMakeFiles/ass4.dir/flags.make
 CMakeFiles/ass4.dir/zombie.c.o: ../zombie.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building C object CMakeFiles/ass4.dir/zombie.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/zombie.c.o   -c /home/weilern/os192/ass4/zombie.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building C object CMakeFiles/ass4.dir/zombie.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass4.dir/zombie.c.o   -c /home/weilern/os192/ass4/OS_ass4-File_System/zombie.c
 
 CMakeFiles/ass4.dir/zombie.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ass4.dir/zombie.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/zombie.c > CMakeFiles/ass4.dir/zombie.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass4/OS_ass4-File_System/zombie.c > CMakeFiles/ass4.dir/zombie.c.i
 
 CMakeFiles/ass4.dir/zombie.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ass4.dir/zombie.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/zombie.c -o CMakeFiles/ass4.dir/zombie.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass4/OS_ass4-File_System/zombie.c -o CMakeFiles/ass4.dir/zombie.c.s
 
 # Object files for target ass4
 ass4_OBJECTS = \
@@ -770,7 +770,7 @@ ass4: CMakeFiles/ass4.dir/wc.c.o
 ass4: CMakeFiles/ass4.dir/zombie.c.o
 ass4: CMakeFiles/ass4.dir/build.make
 ass4: CMakeFiles/ass4.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/weilern/os192/ass4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Linking C executable ass4"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Linking C executable ass4"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ass4.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -783,6 +783,6 @@ CMakeFiles/ass4.dir/clean:
 .PHONY : CMakeFiles/ass4.dir/clean
 
 CMakeFiles/ass4.dir/depend:
-	cd /home/weilern/os192/ass4/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/weilern/os192/ass4 /home/weilern/os192/ass4 /home/weilern/os192/ass4/cmake-build-debug /home/weilern/os192/ass4/cmake-build-debug /home/weilern/os192/ass4/cmake-build-debug/CMakeFiles/ass4.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/weilern/os192/ass4/OS_ass4-File_System /home/weilern/os192/ass4/OS_ass4-File_System /home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug /home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug /home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles/ass4.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ass4.dir/depend
 

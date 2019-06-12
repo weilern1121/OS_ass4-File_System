@@ -8,33 +8,33 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/weilern/os192/ass4/cmake-build-debug"/>
+				<Option working_dir="/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/weilern/os192/ass4/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/weilern/os192/ass4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/weilern/os192/ass4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/weilern/os192/ass4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/weilern/os192/ass4/cmake-build-debug"/>
+				<Option working_dir="/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/weilern/os192/ass4/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/weilern/os192/ass4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/weilern/os192/ass4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/weilern/os192/ass4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ass4">
-				<Option output="/home/weilern/os192/ass4/cmake-build-debug/ass4" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/weilern/os192/ass4/cmake-build-debug"/>
+				<Option output="/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/ass4" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/weilern/os192/ass4/."/>
+					<Add directory="/home/weilern/os192/ass4/OS_ass4-File_System/."/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
@@ -42,20 +42,20 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/weilern/os192/ass4/cmake-build-debug/Makefile&quot;  VERBOSE=1 ass4"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/weilern/os192/ass4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/weilern/os192/ass4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/weilern/os192/ass4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/Makefile&quot;  VERBOSE=1 ass4"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ass4/fast">
-				<Option output="/home/weilern/os192/ass4/cmake-build-debug/ass4" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/weilern/os192/ass4/cmake-build-debug"/>
+				<Option output="/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/ass4" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/weilern/os192/ass4/."/>
+					<Add directory="/home/weilern/os192/ass4/OS_ass4-File_System/."/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
@@ -63,231 +63,231 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/weilern/os192/ass4/cmake-build-debug/Makefile&quot;  VERBOSE=1 ass4/fast"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/weilern/os192/ass4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/weilern/os192/ass4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/weilern/os192/ass4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/Makefile&quot;  VERBOSE=1 ass4/fast"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/weilern/os192/ass4/cmake-build-debug"/>
+				<Option working_dir="/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/weilern/os192/ass4/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/weilern/os192/ass4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/weilern/os192/ass4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/weilern/os192/ass4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/weilern/os192/ass4/asm.h">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/asm.h">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/bio.c">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/bio.c">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/bootmain.c">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/bootmain.c">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/buf.h">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/buf.h">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/cat.c">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/cat.c">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/console.c">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/console.c">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/date.h">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/date.h">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/defs.h">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/defs.h">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/echo.c">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/echo.c">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/elf.h">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/elf.h">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/exec.c">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/exec.c">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/fcntl.h">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/fcntl.h">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/file.c">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/file.c">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/file.h">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/file.h">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/forktest.c">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/forktest.c">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/fs.c">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/fs.c">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/fs.h">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/fs.h">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/grep.c">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/grep.c">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/ide.c">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/ide.c">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/init.c">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/init.c">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/ioapic.c">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/ioapic.c">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/kalloc.c">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/kalloc.c">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/kbd.c">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/kbd.c">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/kbd.h">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/kbd.h">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/kill.c">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/kill.c">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/lapic.c">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/lapic.c">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/ln.c">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/ln.c">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/log.c">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/log.c">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/ls.c">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/ls.c">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/main.c">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/main.c">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/memide.c">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/memide.c">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/memlayout.h">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/memlayout.h">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/mkdir.c">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/mkdir.c">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/mkfs.c">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/mkfs.c">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/mmu.h">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/mmu.h">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/mp.c">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/mp.c">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/mp.h">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/mp.h">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/param.h">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/param.h">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/picirq.c">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/picirq.c">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/pipe.c">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/pipe.c">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/printf.c">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/printf.c">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/proc.c">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/proc.c">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/proc.h">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/proc.h">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/procfs.c">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/procfs.c">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/rm.c">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/rm.c">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/sh.c">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/sh.c">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/sleeplock.c">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/sleeplock.c">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/sleeplock.h">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/sleeplock.h">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/spinlock.c">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/spinlock.c">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/spinlock.h">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/spinlock.h">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/stat.h">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/stat.h">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/stressfs.c">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/stressfs.c">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/string.c">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/string.c">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/syscall.c">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/syscall.c">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/syscall.h">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/syscall.h">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/sysfile.c">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/sysfile.c">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/sysproc.c">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/sysproc.c">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/trap.c">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/trap.c">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/traps.h">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/traps.h">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/types.h">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/types.h">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/uart.c">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/uart.c">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/ulib.c">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/ulib.c">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/umalloc.c">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/umalloc.c">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/user.h">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/user.h">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/usertests.c">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/usertests.c">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/vm.c">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/vm.c">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/wc.c">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/wc.c">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/x86.h">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/x86.h">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/zombie.c">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/zombie.c">
 			<Option target="ass4"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass4/CMakeLists.txt">
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
