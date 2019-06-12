@@ -532,3 +532,21 @@ procdump(void)
     cprintf("\n");
   }
 }
+
+
+
+
+int getValidProcs( int* validProcs ){
+  int output=0, tmp=0;
+  struct proc *p;
+
+  acquire(&ptable.lock);
+  for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
+    if(p->state!=ZOMBIE&&p->state!=UNUSED){
+      validProcs[tmp++]=p->pid;
+      output++;
+    }
+  }
+  release(&ptable.lock);
+  return output;
+}

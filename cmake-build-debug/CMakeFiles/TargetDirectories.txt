@@ -1,0 +1,3 @@
+/home/weilern/os192/ass4/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/weilern/os192/ass4/cmake-build-debug/CMakeFiles/ass4.dir
+/home/weilern/os192/ass4/cmake-build-debug/CMakeFiles/edit_cache.dir
