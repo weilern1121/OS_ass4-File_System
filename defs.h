@@ -121,6 +121,8 @@ int             wait(void);
 void            wakeup(void*);
 void            yield(void);
 int             getValidProcs(int*);
+struct file**    getProcFile(int);
+int             getPid(int);
 
 // procfs.c
 void            procfsinit(void);

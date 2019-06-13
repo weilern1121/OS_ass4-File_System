@@ -550,3 +550,22 @@ int getValidProcs( int* validProcs ){
   release(&ptable.lock);
   return output;
 }
+
+struct file** getProcFile( int fileIndex ){
+  struct proc *p = ptable.proc;
+
+  acquire(&ptable.lock);
+  for(int i=0 ; i < fileIndex; i++ , p++);//move p for the specific proc
+  release(&ptable.lock);
+  return p->ofile;
+}
+
+int getPid( int fileIndex ){
+  struct proc *p = ptable.proc;
+
+  acquire(&ptable.lock);
+  for(int i=0 ; i < fileIndex; i++ , p++);//move p for the specific proc
+  release(&ptable.lock);
+  return p->pid;
+}
+
