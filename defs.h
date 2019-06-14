@@ -57,6 +57,7 @@ int             writei(struct inode*, char*, uint, uint);
 void            ideinit(void);
 void            ideintr(void);
 void            iderw(struct buf*);
+struct buf*     getIdeQeueue(void);
 
 // ioapic.c
 void            ioapicenable(int irq, int cpu);
@@ -121,8 +122,10 @@ int             wait(void);
 void            wakeup(void*);
 void            yield(void);
 int             getValidProcs(int*);
-struct file**    getProcFile(int);
+struct file**   getProcFile(int);
 int             getPid(int);
+
+struct inode*   getInode(int);
 
 // procfs.c
 void            procfsinit(void);
