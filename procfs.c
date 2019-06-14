@@ -56,6 +56,8 @@ void procInodeIndex(int IPinum, int *proc, int *procfd, int flag) {
     if (IPinum >= sbInodes + PROCINODES) {
         *proc = (IPinum - sbInodes) / PROCINODES - 1;
 
+        //TODO - NOT SURE THAT NEED THIS PART BELOW -
+        //TODO - THE ONLY PART THAT NEED THIS FLAG ON IS : fd >= 0 && fd <= NOFILE
         if (flag) {
             if ((IPinum % PROCINODES) >= 10)
                 *procfd = (IPinum % PROCINODES) - 10;
@@ -154,17 +156,17 @@ int countDistinct(int const *arr, int len) {
 }
 
 int ReafFromFileStat(char *designBuffer, int IPinum) {
-    int fileIndex = IPinum % 50;  //%50 -> for this inum
-//    int fdIndex = IPinum%50 -10; //%50 -> for this inum ; -10 -> for moving to currplace
+    int proc,procFd;
+    procInodeIndex(IPinum,&proc,&procFd,0);
     struct file **file;
-    file = getProcFile(fileIndex); //file points to file[16] array
+    file = getProcFile(proc); //file points to file[16] array
     int arr[NOFILE] = {0};
     if (!file) //validation check
         panic("ERROR - ReafFromFileStat: FILE IS NULL!");
     //start write
     int currDirent = 1;
     char searchDir[20];
-    getPath((char) searchDir, fileIndex, "/proc/");
+    getPath((char) searchDir, proc, "/proc/");
     writeDirentToBuff(currDirent, "..", namei(searchDir)->inum, designBuffer);
     currDirent--;
     memmove((void *) (searchDir + sizeof("/fdinfo/")), "/fdinfo/", sizeof("/fdinfo/"));
@@ -221,14 +223,15 @@ int ReafFromFileStat(char *designBuffer, int IPinum) {
 }
 
 int ReafFromInodeInfo(char *designBuffer, int IPinum) {
-    int fileIndex = IPinum % 50;  //%50 -> for this inum
-    struct inode *ind = getInode(fileIndex);
+    int proc,procFd;
+    procInodeIndex(IPinum,&proc,&procFd,0);
+    struct inode *ind = getInode(proc);
     if (!ind) //validation check
         panic("ERROR - ReafFromInodeInfo: INODE IS NULL!");
     //START WRITE - NAME OF FOLDER
     int currDirent = 1;
     char searchDir[20];
-    getPath((char) searchDir, fileIndex, "/proc/");
+    getPath((char) searchDir, proc, "/proc/");
     writeDirentToBuff(currDirent, "..", namei(searchDir)->inum, designBuffer);
     currDirent--;
     memmove((void *) (searchDir + sizeof("/inodeinfo/")), "/inodeinfo/", sizeof("/inodeinfo/"));
@@ -353,6 +356,94 @@ int ReafFromIdeInfo(char *designBuffer, int IPinum) {
 }
 
 
+
+
+int ReadPidName(char *designBuffer, int IPinum ) {
+    int proc, procFd, currDirent = 0;
+    char *tmp = "";
+    struct proc *currproc;
+    char searchDir[20];
+
+    procInodeIndex(IPinum, &proc, &procFd, 0);
+    currproc = getProc(proc);
+
+    if (!currproc) //validation check
+        panic("ERROR - ReadPidStatus: PROC IS NULL!");
+
+    writeToBuff("/proc/" , searchDir);
+    tmp = itoa( currproc->pid , tmp );
+    writeToBuff( tmp , searchDir);
+
+    writeDirentToBuff(currDirent, ".", namei(searchDir)->inum, designBuffer);
+    currDirent++;
+    writeDirentToBuff(currDirent, "..", namei("/proc/")->inum, designBuffer);
+    currDirent++;
+
+    //TODO how to link the name of process
+    //writeDirentToBuff(currDirent, "name", *currproc->name, designBuffer);
+    //currDirent++;
+    writeDirentToBuff(currDirent, "name", sbInodes + 1 + ( (proc + 1) * PROCINODES ) , designBuffer);
+    currDirent++;
+    writeDirentToBuff(currDirent, "status", sbInodes + 2 + ( (proc + 1) * PROCINODES ) , designBuffer);
+    currDirent++;
+
+    return ( sizeof(struct dirent) * currDirent );
+}
+
+
+
+int ReadPidStatus(char *designBuffer, int IPinum ) {
+    char *tmp = "";
+    int proc,procFd;
+    procInodeIndex(IPinum,&proc,&procFd,0);
+
+    struct proc *currproc = getProc(proc);
+    if (!currproc) //validation check
+        panic("ERROR - ReadPidStatus: PROC IS NULL!");
+
+    //START WRITE - NAME OF FOLDER
+    writeToBuff("/proc/", designBuffer);
+    tmp = itoa(currproc->pid, tmp);
+    writeToBuff(tmp,designBuffer);
+    writeToBuff("/status",designBuffer);
+    writeToBuff("\n run state:\t",designBuffer);
+    tmp="";
+    switch(currproc->state){
+        case RUNNING:
+            tmp="RUNNING";
+            break;
+        case RUNNABLE:
+            tmp="RUNNABLE";
+            break;
+        case SLEEPING:
+            tmp="SLEEPING";
+            break;
+        case UNUSED:
+            tmp="UNUSED";
+            break;
+        case ZOMBIE:
+            tmp="ZOMBIE";
+            break;
+        case EMBRYO:
+            tmp="EMBRYO";
+            break;
+        default:
+            panic("ERROR - WRONG STATE");
+    }
+    writeToBuff(tmp,designBuffer);
+    tmp="";
+    writeToBuff("\nsize (in bytes):\t",designBuffer);
+    tmp=itoa(currproc->sz,tmp);
+    writeToBuff(tmp,designBuffer);
+    writeToBuff("\n",designBuffer);
+
+    return sizeof(designBuffer);
+
+}
+
+
+
+
 int
 procfsisdir(struct inode *ip) {
     initSbInodes(ip);
@@ -400,24 +491,26 @@ procfsread(struct inode *ip, char *dst, int off, int n) {
         goto appliedFunc;
     }
     if (IPinum < sbInodes) {
+
         answer = ReadFromMemInodes(designBuffer, IPinum);
 
         goto appliedFunc;
     }
     if (IPinum % PROCINODES == 0) {
+        answer = ReadPidName ( designBuffer, IPinum );
 
-        //TODO
         goto appliedFunc;
     }
     if (IPinum % PROCINODES == 1) {
-
+        answer = ReadPidStatus ( designBuffer, IPinum );
         goto appliedFunc;
     }
-    if (0 <= procfd && procfd < NOFILE) {
+
+    /*if (0 <= procfd && procfd < NOFILE) {
 
         //TODO
         goto appliedFunc;
-    }
+    }*/
 
     panic(" Wrong IP -> INUM CAUSED THIS TRAP, procfsread");
 

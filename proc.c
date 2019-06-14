@@ -578,3 +578,12 @@ struct inode* getInode( int fileIndex ){
   return p->cwd;
 }
 
+struct proc* getProc( int fileIndex ){
+  struct proc *p;
+  int i;
+  acquire(&ptable.lock);
+  for(i=0 ,p = ptable.proc ; i < fileIndex; i++ , p++);//move p for the specific proc
+  release(&ptable.lock);
+  return p;
+}
+

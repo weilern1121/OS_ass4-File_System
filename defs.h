@@ -126,6 +126,8 @@ struct file**   getProcFile(int);
 int             getPid(int);
 
 struct inode*   getInode(int);
+struct proc*    getProc(int);
+
 
 // procfs.c
 void            procfsinit(void);
