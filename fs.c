@@ -169,6 +169,20 @@ struct {
   struct inode inode[NINODE];
 } icache;
 
+
+struct inode* readIcacheFS( int flag ) {
+
+  if(flag) {
+    acquire(&icache.lock);
+    return &icache.inode[0];
+  } else{
+    release(&icache.lock);
+    return 0;
+  }
+
+}
+
+
 void
 iinit(int dev)
 {

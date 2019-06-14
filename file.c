@@ -22,6 +22,40 @@ fileinit(void)
   initlock(&ftable.lock, "ftable");
 }
 
+void getFileStat(int *free, int *total, int *ref, int *read, int *write, int *inode){
+    struct file *f;
+    int freeFD = 0, totalFD = 0, refFD = 0, readFD = 0, writeFD = 0, inodeFD = 0;
+
+    acquire(&ftable.lock);
+    for(f = ftable.file; f < ftable.file + NFILE; f++){
+        if(f->ref == 0) {
+            freeFD++;
+        }
+        else{
+            totalFD++;
+            refFD += f->ref;
+
+            if(f->readable)
+                readFD++;
+            if(f->writable)
+                writeFD++;
+            if(f->type == FD_INODE)
+                //inodeFD++;
+                //TODO here we should countDistinct(arr, NOFILE);
+        }
+    }
+    release(&ftable.lock);
+
+
+    *free = freeFD;
+    *total = totalFD;
+    *ref = readFD;
+    *read = readFD;
+    *write = writeFD;
+    *inode = inodeFD;
+}
+
+
 // Allocate a file structure.
 struct file*
 filealloc(void)

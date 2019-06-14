@@ -30,6 +30,7 @@ struct file*    filealloc(void);
 void            fileclose(struct file*);
 struct file*    filedup(struct file*);
 void            fileinit(void);
+void            getFileStat(int *free, int *total, int *ref, int *read, int *write, int *inode);
 int             fileread(struct file*, char*, int n);
 int             filestat(struct file*, struct stat*);
 int             filewrite(struct file*, char*, int n);
@@ -52,12 +53,13 @@ struct inode*   nameiparent(char*, char*);
 int             readi(struct inode*, char*, uint, uint);
 void            stati(struct inode*, struct stat*);
 int             writei(struct inode*, char*, uint, uint);
+struct inode*   readIcacheFS( int flag );
 
 // ide.c
 void            ideinit(void);
 void            ideintr(void);
 void            iderw(struct buf*);
-struct buf*     getIdeQeueue(void);
+struct buf*     getIdeQeueue(int flag);
 
 // ioapic.c
 void            ioapicenable(int irq, int cpu);
@@ -131,6 +133,7 @@ struct proc*    getProc(int);
 
 // procfs.c
 void            procfsinit(void);
+char*           itoa(int num, char *str);
 
 // swtch.S
 void            swtch(struct context**, struct context*);

@@ -114,7 +114,7 @@ int ReadFromMemInodes(char *designBuffer, int IPinum) {
     for (int i = 0; i < numProcs; i++) {
         cleanName(procNameString);
         char *pidNameInString = itoa(procName[i], procNameString);
-        int currLocation = sbInodes + 50 * (i + 1);
+        int currLocation = sbInodes + PROCINODES * (i + 1);
 
         writeDirentToBuff(currDirent, pidNameInString, currLocation, designBuffer);
         currDirent++;
@@ -155,8 +155,8 @@ int countDistinct(int const *arr, int len) {
     return output;
 }
 
-int ReafFromFileStat(char *designBuffer, int IPinum) {
-    int proc,procFd;
+int ReadFromFileStat(char *designBuffer, int IPinum) {
+    /*int proc,procFd;
     procInodeIndex(IPinum,&proc,&procFd,0);
     struct file **file;
     file = getProcFile(proc); //file points to file[16] array
@@ -166,6 +166,8 @@ int ReafFromFileStat(char *designBuffer, int IPinum) {
     //start write
     int currDirent = 1;
     char searchDir[20];
+
+
     getPath((char) searchDir, proc, "/proc/");
     writeDirentToBuff(currDirent, "..", namei(searchDir)->inum, designBuffer);
     currDirent--;
@@ -188,33 +190,46 @@ int ReafFromFileStat(char *designBuffer, int IPinum) {
     int usedFds = NOFILE - freeFdCounter;
     int refsPerFds = totalRefCounter / usedFds; //TODO - MIGHT BE DOUBLE
     //GOT HERE - NEED TO CALCULATE UNIQUE INODE FDS
-    int uniqueNum = countDistinct(arr, NOFILE);
+    int uniqueNum = countDistinct(arr, NOFILE);*/
+
+
+    int free, total, ref, read, write, inode;
+    getFileStat( &free, &total, &ref, &read, &write, &inode);
 
     //GOT HERE - WRITE OT BUFF
     char *tmp = "";
-    writeToBuff("Free fds:\t", designBuffer);
-    tmp = itoa(freeFdCounter, tmp);
-    writeToBuff("%d\n", tmp);
+    writeToBuff("\nFree fds:\t", designBuffer);
+    tmp = itoa(free, tmp);
+    writeToBuff(tmp, designBuffer);
+
     tmp = "";
-    writeToBuff("Unique inode fds:\t", designBuffer);
-    tmp = itoa(uniqueNum, tmp);
-    writeToBuff("%d\n", tmp);
+    writeToBuff("\nUnique inode fds:\t", designBuffer);
+    tmp = itoa(inode, tmp);
+    writeToBuff(tmp, designBuffer);
+
     tmp = "";
-    writeToBuff("Unique inode fds:\t", designBuffer);
-    tmp = itoa(uniqueNum, tmp);
-    writeToBuff("%d\n", tmp);
+    writeToBuff("\nWriteable fds:\t", designBuffer);
+    tmp = itoa(write, tmp);
+    writeToBuff(tmp, designBuffer);
+
     tmp = "";
-    writeToBuff("Writeable fds:\t", designBuffer);
-    tmp = itoa(writableCounter, tmp);
-    writeToBuff("%d\n", tmp);
+    writeToBuff("\nReadable fds:\t", designBuffer);
+    tmp = itoa(read, tmp);
+    writeToBuff(tmp, designBuffer);
+
     tmp = "";
-    writeToBuff("Readable fds:\t", designBuffer);
-    tmp = itoa(readableCounter, tmp);
-    writeToBuff("%d\n", tmp);
+    writeToBuff("\nRefs per fds:\t", designBuffer);
+    tmp = itoa( ref, tmp);
+    writeToBuff(tmp, designBuffer);
     tmp = "";
-    writeToBuff("Refs per fds:\t", designBuffer);
-    tmp = itoa(refsPerFds, tmp);
-    writeToBuff("%d\n", tmp);
+    writeToBuff(" / ", designBuffer);
+    tmp = itoa( total, tmp);
+    writeToBuff(tmp, designBuffer);
+    tmp = "";
+    writeToBuff(" = ", designBuffer);
+    tmp = itoa( (ref / total) , tmp);
+    writeToBuff(tmp, designBuffer);
+    writeToBuff(" !\n", designBuffer);
 
 
     return strlen(designBuffer);
@@ -222,86 +237,100 @@ int ReafFromFileStat(char *designBuffer, int IPinum) {
 
 }
 
-int ReafFromInodeInfo(char *designBuffer, int IPinum) {
-    int proc,procFd;
-    procInodeIndex(IPinum,&proc,&procFd,0);
-    struct inode *ind = getInode(proc);
+int ReadFromInodeInfo(char *designBuffer, int IPinum) {
+    //int proc,procFd;
+    //procInodeIndex(IPinum,&proc,&procFd,0);
+
+    struct inode *ind= readIcacheFS(1);
+
     if (!ind) //validation check
         panic("ERROR - ReafFromInodeInfo: INODE IS NULL!");
     //START WRITE - NAME OF FOLDER
-    int currDirent = 1;
+
+    /*int currDirent = 1;
     char searchDir[20];
-    getPath((char) searchDir, proc, "/proc/");
-    writeDirentToBuff(currDirent, "..", namei(searchDir)->inum, designBuffer);
-    currDirent--;
-    memmove((void *) (searchDir + sizeof("/inodeinfo/")), "/inodeinfo/", sizeof("/inodeinfo/"));
-    writeDirentToBuff(currDirent, ".", namei(searchDir)->inum, designBuffer);
+        getPath((char) searchDir, proc, "/proc/");
+        writeDirentToBuff(currDirent, "..", namei(searchDir)->inum, designBuffer);
+        currDirent--;
+        memmove((void *) (searchDir + sizeof("/inodeinfo/")), "/inodeinfo/", sizeof("/inodeinfo/"));
+        writeDirentToBuff(currDirent, ".", namei(searchDir)->inum, designBuffer);
+*/
 
-    //GOT HERE - WRITE OT BUFF
-    char *tmp = "";
-    writeToBuff("Device:\t", designBuffer);
-    tmp = itoa(ind->dev, tmp);
-    writeToBuff("%d\n", tmp);
-    tmp = "";
-    writeToBuff("Inode number:\t", designBuffer);
-    tmp = itoa(ind->inum, tmp);
-    writeToBuff("%d\n", tmp);
-    tmp = "";
-    writeToBuff("is valid:\t", designBuffer);
-    if (ind->valid == VALID)
-        tmp = itoa(1, tmp);
-    else
-        tmp = itoa(0, tmp);
-    writeToBuff("%d\n", tmp);
-    tmp = "";
-    writeToBuff("type:\t", designBuffer);
-    switch (ind->type) {
-        case T_DIR:
-            tmp = "DIR";
-            break;
-        case T_FILE:
-            tmp = "FILE";
-            break;
-        case T_DEV:
-            tmp = "DEV";
-            break;
-        default:
-            panic("ERROR - switch (ind->type): UNKNOWN TYPE!");
-    }
-    writeToBuff("%s\n", tmp);
-    tmp = "";
-    writeToBuff("major minor:\t(", designBuffer);
-    tmp = itoa(ind->major, tmp);
-    writeToBuff("%d\t,\t", tmp);
-    tmp = "";
-    tmp = itoa(ind->minor, tmp);
-    writeToBuff("%d)\n", tmp);
-    tmp = "";
-    writeToBuff("hard link:\t", designBuffer);
-    tmp = itoa(ind->nlink, tmp); //TODO - NOT SURE THAT THIS IS THE RELEVANT FIELD
-    writeToBuff("%d\n", tmp);
-    tmp = "";
-    int counter = 0;
-    for (int i = 0; i < NDIRECT + 1; i++) {
-        if (ind->addrs[i])//if pointer==0 ->not used block
-            counter++;
-    }
-    writeToBuff("block used:\t", designBuffer);
-    tmp = itoa(counter, tmp); //TODO - NOT SURE THAT THIS IS THE RELEVANT FIELD
-    writeToBuff("%d\n", tmp);
+    for( int i = 0; i < NINODE; i++ , ind++) {
+        char *tmp = "";
+        if(ind->ref > 0){
+            tmp = itoa( i , tmp );
+            writeDirentToBuff(i, tmp , ind->inum, designBuffer);
 
+            //TODO we should create dirent list contain name of index
+            //TODO and for each dirent the inode inum should be virtual
+            //     so we can catch him later for information.
+
+        }
+
+
+        //GOT HERE - WRITE OT BUFF
+        *tmp = "";
+        writeToBuff("Device:\t", designBuffer);
+        tmp = itoa(ind->dev, tmp);
+        writeToBuff("%d\n", tmp);
+        tmp = "";
+        writeToBuff("Inode number:\t", designBuffer);
+        tmp = itoa(ind->inum, tmp);
+        writeToBuff("%d\n", tmp);
+        tmp = "";
+        writeToBuff("is valid:\t", designBuffer);
+        if (ind->valid == VALID)
+            tmp = itoa(1, tmp);
+        else
+            tmp = itoa(0, tmp);
+        writeToBuff("%d\n", tmp);
+        tmp = "";
+        writeToBuff("type:\t", designBuffer);
+        switch (ind->type) {
+            case T_DIR:
+                tmp = "DIR";
+                break;
+            case T_FILE:
+                tmp = "FILE";
+                break;
+            case T_DEV:
+                tmp = "DEV";
+                break;
+            default:
+                panic("ERROR - switch (ind->type): UNKNOWN TYPE!");
+        }
+        writeToBuff("%s\n", tmp);
+        tmp = "";
+        writeToBuff("major minor:\t(", designBuffer);
+        tmp = itoa(ind->major, tmp);
+        writeToBuff("%d\t,\t", tmp);
+        tmp = "";
+        tmp = itoa(ind->minor, tmp);
+        writeToBuff("%d)\n", tmp);
+        tmp = "";
+        writeToBuff("hard link:\t", designBuffer);
+        tmp = itoa(ind->nlink, tmp); //TODO - NOT SURE THAT THIS IS THE RELEVANT FIELD
+        writeToBuff("%d\n", tmp);
+        tmp = "";
+        int counter = 0;
+        for (int i = 0; i < NDIRECT + 1; i++) {
+            if (ind->addrs[i])//if pointer==0 ->not used block
+                counter++;
+        }
+        writeToBuff("block used:\t", designBuffer);
+        tmp = itoa(counter, tmp); //TODO - NOT SURE THAT THIS IS THE RELEVANT FIELD
+        writeToBuff("%d\n", tmp);
+    }
 
     return sizeof(designBuffer);
 }
 
 #define IDE_CMD_READ  0x20
 #define IDE_CMD_WRITE 0x30
-int ReafFromIdeInfo(char *designBuffer, int IPinum) {
-    int fileIndex = IPinum % 50;  //%50 -> for this inum
-    struct buf *tmpNode = getIdeQeueue();
-    if (!tmpNode) //validation check
-        panic("ERROR - ReafFromIdeInfo: IDEQUEUE IS NULL!");
-    //START WRITE - NAME OF FOLDER
+int ReadFromIdeInfo(char *designBuffer, int IPinum) {
+   /* int fileIndex = IPinum % 50;  //%50 -> for this inum
+     //START WRITE - NAME OF FOLDER
     int currDirent = 1;
     char searchDir[20];
     getPath((char) searchDir, fileIndex, "/proc/");
@@ -309,8 +338,15 @@ int ReafFromIdeInfo(char *designBuffer, int IPinum) {
     currDirent--;
     memmove((void *) (searchDir + sizeof("/ideinfo/")), "/ideinfo/", sizeof("/ideinfo/"));
     writeDirentToBuff(currDirent, ".", namei(searchDir)->inum, designBuffer);
-    //GOT HERE - GET ALL THE FUNCTUALITIES
+    //GOT HERE - GET ALL THE FUNCTUALITIES*/
+
+
+    struct buf *tmpNode = getIdeQeueue(1);
+    if (!tmpNode) //validation check
+        panic("ERROR - ReafFromIdeInfo: IDEQUEUE IS NULL!");
+
     int waitingCounter=0, readCounter=0, writeCounter=0;
+
     while(tmpNode){
         waitingCounter++;
         if(tmpNode->flags & IDE_CMD_READ) //READ OPERATION
@@ -321,37 +357,56 @@ int ReafFromIdeInfo(char *designBuffer, int IPinum) {
     }
     //GOT HERE - WRITE TO BUFF
     char *tmp = "";
-    writeToBuff("Waiting operations:\t", designBuffer);
+    writeToBuff("\nWaiting operations:\t", designBuffer);
     tmp = itoa(waitingCounter, tmp);
-    writeToBuff("%d\n", tmp);
+    writeToBuff(tmp, designBuffer);
+
     tmp = "";
-    writeToBuff("Read waiting operations:\t", designBuffer);
+    writeToBuff("\nRead waiting operations:\t", designBuffer);
     tmp = itoa(readCounter, tmp);
-    writeToBuff("%d\n", tmp);
+    writeToBuff(tmp, designBuffer);
+
     tmp = "";
-    writeToBuff("Write waiting operations:\t", designBuffer);
+    writeToBuff("\nWrite waiting operations:\t", designBuffer);
     tmp = itoa(writeCounter, tmp);
-    writeToBuff("%s\n", tmp);
+    writeToBuff(tmp, designBuffer);
+
     tmp = "";
     //GOT HERE - WRITE TO BUFF ALL IDEQUEUE
-    writeToBuff("Working blocks:\t", designBuffer);
-    tmpNode=getIdeQeueue();
+    writeToBuff("\nWorking blocks:\t", designBuffer);
+    getIdeQeueue(0);
+    tmpNode=getIdeQeueue(1);
+
     if (!tmpNode) //validation check
         panic("ERROR - ReafFromIdeInfo: IDEQUEUE IS NULL!(2)");
+
+    writeToBuff("(\t", designBuffer);
+    int count = 0;
+
     while(tmpNode){
-        writeToBuff("(", designBuffer);
+        writeToBuff("( ", designBuffer);
         tmp = itoa(tmpNode->dev, tmp);
-        writeToBuff("%s , ", tmp);
+        writeToBuff( tmp, designBuffer);
+        writeToBuff( " , ", designBuffer);
+
         tmp = "";
         tmp=itoa(tmpNode->blockno,tmp);
+        writeToBuff( tmp, designBuffer);
+        writeToBuff( " )", designBuffer);
+
         if(tmpNode->next) //if last->print without delimiter
-            writeToBuff("%s )\t;", tmp);
+            writeToBuff( "  ;  ", designBuffer);
         else
-            writeToBuff("%s )\n", tmp);
+            writeToBuff(" )\n", designBuffer);
+
+        if( count % 5 == 0 )
+            writeToBuff("\n  \t", designBuffer);
         //GOT HERE - NEXT ITERATION
+        count++;
         tmpNode=tmpNode->next;
     }
 
+    getIdeQeueue(0);
     return sizeof(designBuffer);
 }
 
@@ -379,15 +434,17 @@ int ReadPidName(char *designBuffer, int IPinum ) {
     writeDirentToBuff(currDirent, "..", namei("/proc/")->inum, designBuffer);
     currDirent++;
 
-    //TODO how to link the name of process
-    //writeDirentToBuff(currDirent, "name", *currproc->name, designBuffer);
+    writeToBuff( currproc->name , designBuffer );
     //currDirent++;
-    writeDirentToBuff(currDirent, "name", sbInodes + 1 + ( (proc + 1) * PROCINODES ) , designBuffer);
-    currDirent++;
-    writeDirentToBuff(currDirent, "status", sbInodes + 2 + ( (proc + 1) * PROCINODES ) , designBuffer);
-    currDirent++;
 
-    return ( sizeof(struct dirent) * currDirent );
+
+    //TODO how to link the name of process
+    //writeDirentToBuff(currDirent, "name", sbInodes + 1 + ( (proc + 1) * PROCINODES ) , designBuffer);
+    //currDirent++;
+    //writeDirentToBuff(currDirent, "status", sbInodes + 2 + ( (proc + 1) * PROCINODES ) , designBuffer);
+    //currDirent++;
+
+    return ( sizeof(struct dirent) * currDirent + sizeof(currproc->name));
 }
 
 
@@ -476,17 +533,17 @@ procfsread(struct inode *ip, char *dst, int off, int n) {
     int procfd = (IPinum % PROCINODES) - INODESSPACE;
 
     if (IPinum == IDEINFO) {
-        answer = ReafFromIdeInfo(designBuffer, IPinum);
+        answer = ReadFromIdeInfo(designBuffer, IPinum);
 
         goto appliedFunc;
     }
     if (IPinum == FILESTAT) {
-        answer = ReafFromFileStat(designBuffer, IPinum);
+        answer = ReadFromFileStat(designBuffer, IPinum);
 
         goto appliedFunc;
     }
     if (IPinum == INODEINFO) {
-        answer = ReafFromInodeInfo(designBuffer, IPinum);
+        answer = ReadFromInodeInfo(designBuffer, IPinum);
 
         goto appliedFunc;
     }
@@ -507,7 +564,7 @@ procfsread(struct inode *ip, char *dst, int off, int n) {
     }
 
     /*if (0 <= procfd && procfd < NOFILE) {
-
+            inode info()
         //TODO
         goto appliedFunc;
     }*/

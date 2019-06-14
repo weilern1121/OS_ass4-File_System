@@ -167,6 +167,40 @@ iderw(struct buf *b)
   release(&idelock);
 }
 
-struct buf* getIdeQeueue(){
-  return idequeue;
+struct buf* getIdeQeueue(int flag){
+  /*struct buf *pp;
+  int numOp = 0, readOp = 0, writeOp = 0;
+  char *workBlock[PGSIZE];
+  char *tmp;
+
+  acquire(&idelock);
+
+  pp = idequeue;
+  while(pp){
+    tmp = "";
+    numOp++;
+    if(pp->flags & IDE_CMD_READ) //READ OPERATION
+      readOp++;
+    if(pp->flags & IDE_CMD_WRITE) //WRITE OPERATION
+      writeOp++;
+
+    tmp = itoa(pp->dev, tmp);
+
+
+
+
+    pp=pp->next;
+  }
+
+
+
+  */
+  if(flag){
+    acquire(&idelock);
+    return idequeue;
+  } else {
+    release(&idelock);
+    return 0;
+  }
+
 }
