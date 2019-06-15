@@ -17,6 +17,7 @@ int sbInodes = 0;
 int IDEINFO = 0;
 int FILESTAT = 0;
 int INODEINFO = 0;
+int VIRTUALINODEINFO = 0;
 
 
 void initSbInodes(struct inode *ip) {
@@ -27,6 +28,7 @@ void initSbInodes(struct inode *ip) {
         IDEINFO = sbInodes + 1;
         FILESTAT = sbInodes + 2;
         INODEINFO = sbInodes + 3;
+        VIRTUALINODEINFO     = sbInodes + NPROC*(PROCINODES + 1); //offset for the virtual inodeInfo dirents
     }
 }
 
@@ -83,7 +85,7 @@ void writeToBuff(char *name, char *designBuffer) {
     if (!name)
         panic("ERROR - writeToBuff: NAME IS NULL!");
     int len = sizeof(name);
-    memmove(designBuffer + strlen(designBuffer), designBuffer, (uint) len);
+    memmove(designBuffer + strlen(designBuffer), name, (uint) len);
 }
 
 void cleanName(char *name) {
@@ -137,23 +139,7 @@ void getPath(char searchDir, int fileIndex, char *folder) {
     //NOW searchDir HOLDS: folder/pid
 }
 
-int countDistinct(int const *arr, int len) {
-    int output = 0;
-    int flag;
-    for (int i = 0; i < len; i++) {
-        flag = 1;
-        int j = 0;
-        for (; flag && j < len;) {
-            if (arr[i] == arr[j])
-                flag = 0;
-            else
-                j++;
-        }
-        if (i == j)
-            output++;
-    }
-    return output;
-}
+
 
 int ReadFromFileStat(char *designBuffer, int IPinum) {
     /*int proc,procFd;
@@ -241,10 +227,6 @@ int ReadFromInodeInfo(char *designBuffer, int IPinum) {
     //int proc,procFd;
     //procInodeIndex(IPinum,&proc,&procFd,0);
 
-    struct inode *ind= readIcacheFS(1);
-
-    if (!ind) //validation check
-        panic("ERROR - ReafFromInodeInfo: INODE IS NULL!");
     //START WRITE - NAME OF FOLDER
 
     /*int currDirent = 1;
@@ -256,11 +238,19 @@ int ReadFromInodeInfo(char *designBuffer, int IPinum) {
         writeDirentToBuff(currDirent, ".", namei(searchDir)->inum, designBuffer);
 */
 
-    for( int i = 0; i < NINODE; i++ , ind++) {
+    struct inode *ind = readIcacheFS(1);
+
+    if (!ind) //validation check
+        panic("ERROR - ReafFromInodeInfo: INODE IS NULL!");
+
+
+
+
+    for (int i = 0; i < NINODE; i++, ind++) {
         char *tmp = "";
-        if(ind->ref > 0){
-            tmp = itoa( i , tmp );
-            writeDirentToBuff(i, tmp , ind->inum, designBuffer);
+        if (ind->ref > 0) {
+            tmp = itoa(i, tmp);
+            writeDirentToBuff(i, tmp, VIRTUALINODEINFO + i , designBuffer);
 
             //TODO we should create dirent list contain name of index
             //TODO and for each dirent the inode inum should be virtual
@@ -268,63 +258,92 @@ int ReadFromInodeInfo(char *designBuffer, int IPinum) {
 
         }
 
+    }
 
-        //GOT HERE - WRITE OT BUFF
-        *tmp = "";
-        writeToBuff("Device:\t", designBuffer);
-        tmp = itoa(ind->dev, tmp);
-        writeToBuff("%d\n", tmp);
-        tmp = "";
-        writeToBuff("Inode number:\t", designBuffer);
-        tmp = itoa(ind->inum, tmp);
-        writeToBuff("%d\n", tmp);
-        tmp = "";
-        writeToBuff("is valid:\t", designBuffer);
-        if (ind->valid == VALID)
-            tmp = itoa(1, tmp);
-        else
-            tmp = itoa(0, tmp);
-        writeToBuff("%d\n", tmp);
-        tmp = "";
-        writeToBuff("type:\t", designBuffer);
-        switch (ind->type) {
-            case T_DIR:
-                tmp = "DIR";
-                break;
-            case T_FILE:
-                tmp = "FILE";
-                break;
-            case T_DEV:
-                tmp = "DEV";
-                break;
-            default:
-                panic("ERROR - switch (ind->type): UNKNOWN TYPE!");
-        }
-        writeToBuff("%s\n", tmp);
-        tmp = "";
-        writeToBuff("major minor:\t(", designBuffer);
-        tmp = itoa(ind->major, tmp);
-        writeToBuff("%d\t,\t", tmp);
-        tmp = "";
-        tmp = itoa(ind->minor, tmp);
-        writeToBuff("%d)\n", tmp);
-        tmp = "";
-        writeToBuff("hard link:\t", designBuffer);
-        tmp = itoa(ind->nlink, tmp); //TODO - NOT SURE THAT THIS IS THE RELEVANT FIELD
-        writeToBuff("%d\n", tmp);
-        tmp = "";
+    readIcacheFS(0); //RELEASE LOCK
+    return sizeof(designBuffer);
+
+}
+
+int ReadVirtInfo(char *designBuffer, int IPinum) {
+    int inumIndex = IPinum - VIRTUALINODEINFO;
+    struct inode *ind= readIcacheFS(1);
+    char *tmp = "";
+
+    if (!ind) //validation check
+        panic("ERROR - ReafFromInodeInfo: INODE IS NULL!");
+
+    while(inumIndex){
+        ind++;
+        inumIndex--;
+    }
+    //GOT HERE - IND POINTS TO THE REQUIRED INUM -> WRITE OT BUFF
+
+    writeToBuff("Device:\t", designBuffer);
+    tmp = itoa(ind->dev, tmp);
+    writeToBuff(tmp,designBuffer);
+    tmp = "";
+    writeToBuff("\nInode number:\t", designBuffer);
+    tmp = itoa(ind->inum, tmp);
+    writeToBuff(tmp,designBuffer);
+    tmp = "";
+    writeToBuff("\nis valid:\t", designBuffer);
+    if (ind->valid == VALID)
+        tmp = itoa(1, tmp);
+    else
+        tmp = itoa(0, tmp);
+    writeToBuff(tmp,designBuffer);
+    tmp = "";
+    writeToBuff("\ntype:\t", designBuffer);
+    switch (ind->type) {
+        case T_DIR:
+            tmp = "DIR";
+            break;
+        case T_FILE:
+            tmp = "FILE";
+            break;
+        case T_DEV:
+            tmp = "DEV";
+            break;
+        default:
+            panic("ERROR - switch (ind->type): UNKNOWN TYPE!");
+    }
+    writeToBuff(tmp,designBuffer);
+    tmp = "";
+    writeToBuff("\nmajor minor:\t( ", designBuffer);
+    tmp = itoa(ind->major, tmp);
+    writeToBuff(tmp,designBuffer);
+    writeToBuff(" , ", designBuffer);
+    tmp = "";
+    tmp = itoa(ind->minor, tmp);
+    writeToBuff(tmp,designBuffer);
+    writeToBuff(" )\n", designBuffer);
+    tmp = "";
+    writeToBuff("\nhard link:\t", designBuffer);
+    tmp = itoa(ind->nlink, tmp); //TODO - NOT SURE THAT THIS IS THE RELEVANT FIELD
+    writeToBuff(tmp,designBuffer);
+    tmp = "";
+    if(ind->type == T_DEV)
+        tmp = itoa(0 , tmp);
+    else {
         int counter = 0;
         for (int i = 0; i < NDIRECT + 1; i++) {
             if (ind->addrs[i])//if pointer==0 ->not used block
                 counter++;
         }
-        writeToBuff("block used:\t", designBuffer);
         tmp = itoa(counter, tmp); //TODO - NOT SURE THAT THIS IS THE RELEVANT FIELD
-        writeToBuff("%d\n", tmp);
     }
+    writeToBuff("\nblock used:\t", designBuffer);
+    writeToBuff(tmp,designBuffer);
+    writeToBuff("\n", designBuffer);
 
+
+    readIcacheFS(0); //RELEASE LOCK
     return sizeof(designBuffer);
+
+
 }
+
 
 #define IDE_CMD_READ  0x20
 #define IDE_CMD_WRITE 0x30
@@ -414,9 +433,9 @@ int ReadFromIdeInfo(char *designBuffer, int IPinum) {
 
 
 int ReadPidName(char *designBuffer, int IPinum ) {
-    int proc, procFd, currDirent = 0;
+    int proc=-1, procFd, currDirent = 0;
     char *tmp = "";
-    struct proc *currproc;
+    struct proc *currproc=0;
     char searchDir[20];
 
     procInodeIndex(IPinum, &proc, &procFd, 0);
@@ -451,10 +470,11 @@ int ReadPidName(char *designBuffer, int IPinum ) {
 
 int ReadPidStatus(char *designBuffer, int IPinum ) {
     char *tmp = "";
-    int proc,procFd;
+    int proc=-1,procFd;
     procInodeIndex(IPinum,&proc,&procFd,0);
 
-    struct proc *currproc = getProc(proc);
+    struct proc *currproc=0;
+    currproc= getProc(proc);
     if (!currproc) //validation check
         panic("ERROR - ReadPidStatus: PROC IS NULL!");
 
@@ -530,7 +550,7 @@ procfsread(struct inode *ip, char *dst, int off, int n) {
     int answer = 0, IPinum = ip->inum;
 
     // procfd = file index after control and space block, or each proc size 50 block
-    int procfd = (IPinum % PROCINODES) - INODESSPACE;
+//    int procfd = (IPinum % PROCINODES) - INODESSPACE;
 
     if (IPinum == IDEINFO) {
         answer = ReadFromIdeInfo(designBuffer, IPinum);
@@ -553,16 +573,21 @@ procfsread(struct inode *ip, char *dst, int off, int n) {
 
         goto appliedFunc;
     }
-    if (IPinum % PROCINODES == 0) {
+    if ( (IPinum-sbInodes) % PROCINODES == 0) {
         answer = ReadPidName ( designBuffer, IPinum );
 
         goto appliedFunc;
     }
-    if (IPinum % PROCINODES == 1) {
+    if ( (IPinum-sbInodes) % PROCINODES == 1) {
         answer = ReadPidStatus ( designBuffer, IPinum );
         goto appliedFunc;
     }
 
+    if (IPinum >= VIRTUALINODEINFO){
+        answer = ReadVirtInfo ( designBuffer , IPinum);
+
+        goto appliedFunc;
+    }
     /*if (0 <= procfd && procfd < NOFILE) {
             inode info()
         //TODO

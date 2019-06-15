@@ -16,6 +16,26 @@ struct {
   struct file file[NFILE];
 } ftable;
 
+
+int countDistinct(int const *arr, int len) {
+    int output = 0;
+    int flag;
+    for (int i = 0; i < len; i++) {
+        flag = 1;
+        int j = 0;
+        for (; flag && j < len;) {
+            if (arr[i] == arr[j])
+                flag = 0;
+            else
+                j++;
+        }
+        if (i == j)
+            output++;
+    }
+    return output;
+}
+
+
 void
 fileinit(void)
 {
@@ -25,6 +45,8 @@ fileinit(void)
 void getFileStat(int *free, int *total, int *ref, int *read, int *write, int *inode){
     struct file *f;
     int freeFD = 0, totalFD = 0, refFD = 0, readFD = 0, writeFD = 0, inodeFD = 0;
+    int i = 0;
+    int arr[NOFILE] = {0};
 
     acquire(&ftable.lock);
     for(f = ftable.file; f < ftable.file + NFILE; f++){
@@ -40,10 +62,15 @@ void getFileStat(int *free, int *total, int *ref, int *read, int *write, int *in
             if(f->writable)
                 writeFD++;
             if(f->type == FD_INODE)
-                //inodeFD++;
-                //TODO here we should countDistinct(arr, NOFILE);
+            {
+                arr[i] = f->ip->inum;
+                i++;
+            }
         }
     }
+    inodeFD = countDistinct( arr, i-1 );
+
+
     release(&ftable.lock);
 
 

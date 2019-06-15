@@ -542,7 +542,7 @@ int getValidProcs( int* validProcs ){
 
   acquire(&ptable.lock);
   for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
-    if(p->state!=ZOMBIE&&p->state!=UNUSED){
+    if(p->state!=ZOMBIE&&p->state!=UNUSED&&p->state!=EMBRYO){
       validProcs[tmp++]=p->pid;
       output++;
     }
@@ -579,7 +579,7 @@ struct inode* getInode( int fileIndex ){
 }
 
 struct proc* getProc( int fileIndex ){
-  struct proc *p;
+  struct proc *p=0;
   int i;
   acquire(&ptable.lock);
   for(i=0 ,p = ptable.proc ; i < fileIndex; i++ , p++);//move p for the specific proc
