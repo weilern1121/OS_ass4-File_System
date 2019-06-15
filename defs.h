@@ -53,13 +53,15 @@ struct inode*   nameiparent(char*, char*);
 int             readi(struct inode*, char*, uint, uint);
 void            stati(struct inode*, struct stat*);
 int             writei(struct inode*, char*, uint, uint);
-struct inode*   readIcacheFS( int flag );
+int             readIcacheFS( int*);
+struct inode*   getInodeFromChache(int);
+
 
 // ide.c
 void            ideinit(void);
 void            ideintr(void);
 void            iderw(struct buf*);
-struct buf*     getIdeQeueue(int flag);
+int             getIdeQeueue(int *numO, int *readO, int *writeO, int *workblock, int *workdev);
 
 // ioapic.c
 void            ioapicenable(int irq, int cpu);

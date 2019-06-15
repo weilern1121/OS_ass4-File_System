@@ -28,7 +28,7 @@ void initSbInodes(struct inode *ip) {
         IDEINFO = sbInodes + 1;
         FILESTAT = sbInodes + 2;
         INODEINFO = sbInodes + 3;
-        VIRTUALINODEINFO     = sbInodes + NPROC*(PROCINODES + 1); //offset for the virtual inodeInfo dirents
+        VIRTUALINODEINFO = sbInodes + NPROC * (PROCINODES + 1); //offset for the virtual inodeInfo dirents
     }
 }
 
@@ -49,6 +49,21 @@ char *itoa(int num, char *str) {
         num = num / 10;
     }
     str[i] = '\0'; // Append string terminator
+
+    // Reverse the string
+    int start = 0;
+    int end = i -1;
+    while (start < end)
+    {
+        //swap
+        char tmp= str[start];
+        str[start]=str[end];
+        str[end]=tmp;
+//        swap(*(str+start), *(str+end));
+        start++;
+        end--;
+    }
+
     return str;
 }
 
@@ -84,32 +99,37 @@ void writeDirentToBuff(int currDirent, char *name, int IPinum, char *designBuffe
 void writeToBuff(char *name, char *designBuffer) {
     if (!name)
         panic("ERROR - writeToBuff: NAME IS NULL!");
-    int len = sizeof(name);
-    memmove(designBuffer + strlen(designBuffer), name, (uint) len);
+    int len = strlen(name);
+    int sz = strlen(designBuffer);
+    memmove(designBuffer + sz, name, (uint) len);
 }
 
 void cleanName(char *name) {
-    for (int i = 0; i < NAMESIZE; i++)
+    for (int i = 0; i < DIRSIZ; i++)
         name[i] = 0;
 }
 
 
 //todo - not sure that need to send IPnum as argument to this specific func!
 int ReadFromMemInodes(char *designBuffer, int IPinum) {
+    //cprintf("GOT inum inside fuck %d\n" , IPinum);
+    //cprintf("GOT inum inside fuck22 %d\n" , namei("/proc")->inum);
+
     int currDirent = 0;
+
     writeDirentToBuff(currDirent, ".", namei("/proc")->inum, designBuffer);
     currDirent++;
     writeDirentToBuff(currDirent, "..", namei("")->inum, designBuffer);
     currDirent++;
-    writeDirentToBuff(currDirent, "ideInfo", IDEINFO, designBuffer);
+    writeDirentToBuff(currDirent, "ideinfo", IDEINFO, designBuffer);
     currDirent++;
-    writeDirentToBuff(currDirent, "fileStat", FILESTAT, designBuffer);
+    writeDirentToBuff(currDirent, "filestat", FILESTAT, designBuffer);
     currDirent++;
-    writeDirentToBuff(currDirent, "inodeInfo", INODEINFO, designBuffer);
+    writeDirentToBuff(currDirent, "inodeinfo", INODEINFO, designBuffer);
     currDirent++;
 
     int procName[NPROC] = {0}; //array of RUNNING/RUNNABLE/SLEEPING procs
-    char procNameString[NAMESIZE] = {0}; //used to iota the pid to string
+    char procNameString[DIRSIZ] = {0}; //used to iota the pid to string
 
     int numProcs = getValidProcs(procName);
 
@@ -138,7 +158,6 @@ void getPath(char searchDir, int fileIndex, char *folder) {
     memmove((void *) (searchDir + sizeof(*pidInString)), pidInString, sizeof(*pidInString));
     //NOW searchDir HOLDS: folder/pid
 }
-
 
 
 int ReadFromFileStat(char *designBuffer, int IPinum) {
@@ -180,40 +199,40 @@ int ReadFromFileStat(char *designBuffer, int IPinum) {
 
 
     int free, total, ref, read, write, inode;
-    getFileStat( &free, &total, &ref, &read, &write, &inode);
+    getFileStat(&free, &total, &ref, &read, &write, &inode);
 
     //GOT HERE - WRITE OT BUFF
-    char *tmp = "";
+    char tmp[DIRSIZ];
     writeToBuff("\nFree fds:\t", designBuffer);
-    tmp = itoa(free, tmp);
+    itoa(free, tmp);
     writeToBuff(tmp, designBuffer);
 
-    tmp = "";
+    cleanName(tmp);
     writeToBuff("\nUnique inode fds:\t", designBuffer);
-    tmp = itoa(inode, tmp);
+    itoa(inode, tmp);
     writeToBuff(tmp, designBuffer);
 
-    tmp = "";
+    cleanName(tmp);
     writeToBuff("\nWriteable fds:\t", designBuffer);
-    tmp = itoa(write, tmp);
+    itoa(write, tmp);
     writeToBuff(tmp, designBuffer);
 
-    tmp = "";
+    cleanName(tmp);
     writeToBuff("\nReadable fds:\t", designBuffer);
-    tmp = itoa(read, tmp);
+    itoa(read, tmp);
     writeToBuff(tmp, designBuffer);
 
-    tmp = "";
+    cleanName(tmp);
     writeToBuff("\nRefs per fds:\t", designBuffer);
-    tmp = itoa( ref, tmp);
+    itoa(ref, tmp);
     writeToBuff(tmp, designBuffer);
-    tmp = "";
+    cleanName(tmp);
     writeToBuff(" / ", designBuffer);
-    tmp = itoa( total, tmp);
+    itoa(total, tmp);
     writeToBuff(tmp, designBuffer);
-    tmp = "";
+    cleanName(tmp);
     writeToBuff(" = ", designBuffer);
-    tmp = itoa( (ref / total) , tmp);
+    itoa((ref / total), tmp);
     writeToBuff(tmp, designBuffer);
     writeToBuff(" !\n", designBuffer);
 
@@ -238,19 +257,20 @@ int ReadFromInodeInfo(char *designBuffer, int IPinum) {
         writeDirentToBuff(currDirent, ".", namei(searchDir)->inum, designBuffer);
 */
 
-    struct inode *ind = readIcacheFS(1);
+    /*struct inode *ind = readIcacheFS(1);
 
     if (!ind) //validation check
         panic("ERROR - ReafFromInodeInfo: INODE IS NULL!");
 
 
-
-
+    int count=0;
     for (int i = 0; i < NINODE; i++, ind++) {
-        char *tmp = "";
+        char tmp[DIRSIZ];
         if (ind->ref > 0) {
-            tmp = itoa(i, tmp);
-            writeDirentToBuff(i, tmp, VIRTUALINODEINFO + i , designBuffer);
+            count++;
+            itoa(i, tmp);
+            cprintf("writeDirentToBuff i= %d\tvirt_offset=%d\n",i,i+VIRTUALINODEINFO);
+            writeDirentToBuff(i, tmp, VIRTUALINODEINFO + i, designBuffer);
 
             //TODO we should create dirent list contain name of index
             //TODO and for each dirent the inode inum should be virtual
@@ -261,80 +281,98 @@ int ReadFromInodeInfo(char *designBuffer, int IPinum) {
     }
 
     readIcacheFS(0); //RELEASE LOCK
-    return sizeof(designBuffer);
+//    return sizeof(designBuffer);
 
+    cprintf("count=:%d\n",count);*/
+    char tmp[DIRSIZ];
+    int validInum[NINODE] = {0};
+    int count = readIcacheFS(validInum);
+    for(int i=0; i<count; i++){
+        itoa(i, tmp);
+        cprintf("*validInum[i]=%d\n",validInum[i]);
+        cprintf("writeDirentToBuff i= %d\tvirt_offset=%d\n",i,VIRTUALINODEINFO + validInum[i]);
+        writeDirentToBuff(i, tmp, VIRTUALINODEINFO + validInum[i], designBuffer);
+        cleanName(tmp);
+    }
+    count--;
+    return sizeof(struct dirent) * count;
 }
 
 int ReadVirtInfo(char *designBuffer, int IPinum) {
     int inumIndex = IPinum - VIRTUALINODEINFO;
-    struct inode *ind= readIcacheFS(1);
-    char *tmp = "";
-
+    cprintf("index= %d\n",inumIndex);
+//    struct inode *ind = readIcacheFS(1);
+    struct inode *ind = getInodeFromChache(inumIndex);
+    char tmp[DIRSIZ];
     if (!ind) //validation check
         panic("ERROR - ReafFromInodeInfo: INODE IS NULL!");
 
-    while(inumIndex){
+    /*while (inumIndex) {
         ind++;
         inumIndex--;
-    }
+    }*/
+
     //GOT HERE - IND POINTS TO THE REQUIRED INUM -> WRITE OT BUFF
 
     writeToBuff("Device:\t", designBuffer);
-    tmp = itoa(ind->dev, tmp);
-    writeToBuff(tmp,designBuffer);
-    tmp = "";
+    itoa(ind->dev, tmp);
+    writeToBuff(tmp, designBuffer);
+    cleanName(tmp);
     writeToBuff("\nInode number:\t", designBuffer);
-    tmp = itoa(ind->inum, tmp);
-    writeToBuff(tmp,designBuffer);
-    tmp = "";
+    itoa(ind->inum, tmp);
+    writeToBuff(tmp, designBuffer);
+    cleanName(tmp);
     writeToBuff("\nis valid:\t", designBuffer);
     if (ind->valid == VALID)
-        tmp = itoa(1, tmp);
+        itoa(1, tmp);
     else
-        tmp = itoa(0, tmp);
-    writeToBuff(tmp,designBuffer);
-    tmp = "";
+        itoa(0, tmp);
+    writeToBuff(tmp, designBuffer);
+    cleanName(tmp);
     writeToBuff("\ntype:\t", designBuffer);
     switch (ind->type) {
         case T_DIR:
-            tmp = "DIR";
+            writeToBuff("DIR",tmp);
+//            tmp = "DIR";
             break;
         case T_FILE:
-            tmp = "FILE";
+            writeToBuff("FILE",tmp);
+//            tmp = "FILE";
             break;
         case T_DEV:
-            tmp = "DEV";
+            writeToBuff("DEV",tmp);
+//            tmp = "DEV";
             break;
         default:
             panic("ERROR - switch (ind->type): UNKNOWN TYPE!");
     }
-    writeToBuff(tmp,designBuffer);
-    tmp = "";
+    writeToBuff(tmp, designBuffer);
+    cleanName(tmp);
     writeToBuff("\nmajor minor:\t( ", designBuffer);
-    tmp = itoa(ind->major, tmp);
-    writeToBuff(tmp,designBuffer);
+    itoa(ind->major, tmp);
+    writeToBuff(tmp, designBuffer);
     writeToBuff(" , ", designBuffer);
-    tmp = "";
-    tmp = itoa(ind->minor, tmp);
-    writeToBuff(tmp,designBuffer);
+    cleanName(tmp);
+    itoa(ind->minor, tmp);
+    writeToBuff(tmp, designBuffer);
     writeToBuff(" )\n", designBuffer);
-    tmp = "";
+    cleanName(tmp);
     writeToBuff("\nhard link:\t", designBuffer);
-    tmp = itoa(ind->nlink, tmp); //TODO - NOT SURE THAT THIS IS THE RELEVANT FIELD
-    writeToBuff(tmp,designBuffer);
-    tmp = "";
-    if(ind->type == T_DEV)
-        tmp = itoa(0 , tmp);
+    itoa(ind->nlink, tmp); //TODO - NOT SURE THAT THIS IS THE RELEVANT FIELD
+    writeToBuff(tmp, designBuffer);
+    cleanName(tmp);
+    if (ind->type == T_DEV)
+        itoa(0, tmp);
     else {
         int counter = 0;
         for (int i = 0; i < NDIRECT + 1; i++) {
             if (ind->addrs[i])//if pointer==0 ->not used block
                 counter++;
         }
-        tmp = itoa(counter, tmp); //TODO - NOT SURE THAT THIS IS THE RELEVANT FIELD
+        itoa(counter, tmp); //TODO - NOT SURE THAT THIS IS THE RELEVANT FIELD
     }
     writeToBuff("\nblock used:\t", designBuffer);
-    writeToBuff(tmp,designBuffer);
+    writeToBuff(tmp, designBuffer);
     writeToBuff("\n", designBuffer);
 
 
@@ -347,95 +385,116 @@ int ReadVirtInfo(char *designBuffer, int IPinum) {
 
 #define IDE_CMD_READ  0x20
 #define IDE_CMD_WRITE 0x30
+
 int ReadFromIdeInfo(char *designBuffer, int IPinum) {
-   /* int fileIndex = IPinum % 50;  //%50 -> for this inum
-     //START WRITE - NAME OF FOLDER
-    int currDirent = 1;
-    char searchDir[20];
-    getPath((char) searchDir, fileIndex, "/proc/");
-    writeDirentToBuff(currDirent, "..", namei(searchDir)->inum, designBuffer);
-    currDirent--;
-    memmove((void *) (searchDir + sizeof("/ideinfo/")), "/ideinfo/", sizeof("/ideinfo/"));
-    writeDirentToBuff(currDirent, ".", namei(searchDir)->inum, designBuffer);
-    //GOT HERE - GET ALL THE FUNCTUALITIES*/
+    /* int fileIndex = IPinum % 50;  //%50 -> for this inum
+      //START WRITE - NAME OF FOLDER
+     int currDirent = 1;
+     char searchDir[20];
+     getPath((char) searchDir, fileIndex, "/proc/");
+     writeDirentToBuff(currDirent, "..", namei(searchDir)->inum, designBuffer);
+     currDirent--;
+     memmove((void *) (searchDir + sizeof("/ideinfo/")), "/ideinfo/", sizeof("/ideinfo/"));
+     writeDirentToBuff(currDirent, ".", namei(searchDir)->inum, designBuffer);
+     //GOT HERE - GET ALL THE FUNCTUALITIES*/
 
 
-    struct buf *tmpNode = getIdeQeueue(1);
-    if (!tmpNode) //validation check
-        panic("ERROR - ReafFromIdeInfo: IDEQUEUE IS NULL!");
+//    if (!tmpNode) //validation check
+//        panic("ERROR - ReafFromIdeInfo: IDEQUEUE IS NULL!");
 
-    int waitingCounter=0, readCounter=0, writeCounter=0;
 
-    while(tmpNode){
-        waitingCounter++;
-        if(tmpNode->flags & IDE_CMD_READ) //READ OPERATION
-            readCounter++;
-        if(tmpNode->flags & IDE_CMD_WRITE) //WRITE OPERATION
-            writeCounter++;
-        tmpNode=tmpNode->next;
-    }
+//    while (tmpNode) {
+//        waitingCounter++;
+//        if (tmpNode->flags & IDE_CMD_READ) //READ OPERATION
+//            readCounter++;
+//        if (tmpNode->flags & IDE_CMD_WRITE) //WRITE OPERATION
+//            writeCounter++;
+//        tmpNode = tmpNode->next;
+//    }
+
+
+    int waitingCounter = 0, readCounter = 0, writeCounter = 0;
+    int *block[50] = {0};
+    int *dev[50] = {0};
+
+    int listSize = getIdeQeueue( &waitingCounter, &readCounter, &writeCounter,
+                               *block, *dev);
+
+    //cprintf(" %d as %d asd %d " ,waitingCounter , readCounter , writeCounter );
+
     //GOT HERE - WRITE TO BUFF
-    char *tmp = "";
+    char tmp[DIRSIZ];
     writeToBuff("\nWaiting operations:\t", designBuffer);
-    tmp = itoa(waitingCounter, tmp);
-    writeToBuff(tmp, designBuffer);
-
-    tmp = "";
-    writeToBuff("\nRead waiting operations:\t", designBuffer);
-    tmp = itoa(readCounter, tmp);
-    writeToBuff(tmp, designBuffer);
-
-    tmp = "";
-    writeToBuff("\nWrite waiting operations:\t", designBuffer);
-    tmp = itoa(writeCounter, tmp);
-    writeToBuff(tmp, designBuffer);
-
-    tmp = "";
-    //GOT HERE - WRITE TO BUFF ALL IDEQUEUE
-    writeToBuff("\nWorking blocks:\t", designBuffer);
-    getIdeQeueue(0);
-    tmpNode=getIdeQeueue(1);
-
-    if (!tmpNode) //validation check
-        panic("ERROR - ReafFromIdeInfo: IDEQUEUE IS NULL!(2)");
-
-    writeToBuff("(\t", designBuffer);
-    int count = 0;
-
-    while(tmpNode){
-        writeToBuff("( ", designBuffer);
-        tmp = itoa(tmpNode->dev, tmp);
-        writeToBuff( tmp, designBuffer);
-        writeToBuff( " , ", designBuffer);
-
-        tmp = "";
-        tmp=itoa(tmpNode->blockno,tmp);
-        writeToBuff( tmp, designBuffer);
-        writeToBuff( " )", designBuffer);
-
-        if(tmpNode->next) //if last->print without delimiter
-            writeToBuff( "  ;  ", designBuffer);
-        else
-            writeToBuff(" )\n", designBuffer);
-
-        if( count % 5 == 0 )
-            writeToBuff("\n  \t", designBuffer);
-        //GOT HERE - NEXT ITERATION
-        count++;
-        tmpNode=tmpNode->next;
+    if(waitingCounter == 0 )
+        writeToBuff("0", designBuffer);
+    else {
+        itoa(waitingCounter, tmp);
+        writeToBuff(tmp, designBuffer);
     }
 
-    getIdeQeueue(0);
-    return sizeof(designBuffer);
+    cleanName(tmp);
+    writeToBuff("\nRead waiting operations:\t", designBuffer);
+    if(readCounter == 0 )
+        writeToBuff("0", designBuffer);
+    else {
+        itoa(readCounter, tmp);
+        writeToBuff(tmp, designBuffer);
+    }
+
+    cleanName(tmp);
+    writeToBuff("\nWrite waiting operations:\t", designBuffer);
+    if(writeCounter == 0 )
+        writeToBuff("0", designBuffer);
+    else {
+        itoa(writeCounter, tmp);
+        writeToBuff(tmp, designBuffer);
+    }
+    //GOT HERE - WRITE TO BUFF ALL IDEQUEUE
+
+
+    cleanName(tmp);
+    writeToBuff("\nWorking blocks:\t", designBuffer);
+    writeToBuff("(", designBuffer);
+
+    int count = 0;
+    if (listSize == 0) { //IF EMPTY PTR ->EMPTY LIST
+        writeToBuff(" , )\n", designBuffer);
+    } else { //ELSE -> ITERATE  OVER THE LIST
+
+        int k = 0;
+        while( k < listSize ) {
+            writeToBuff("( ", designBuffer);
+            itoa(*dev[k], tmp);
+            writeToBuff(tmp, designBuffer);
+            writeToBuff(" , ", designBuffer);
+
+            cleanName(tmp);
+            itoa(*block[k], tmp);
+            writeToBuff(tmp, designBuffer);
+            writeToBuff(" )", designBuffer);
+
+            k++;
+
+            if (k < listSize ) { //if last->print without delimiter
+                writeToBuff("  ;  ", designBuffer);
+                if (count % 5 == 0)
+                    writeToBuff("\n  \t", designBuffer);
+                //GOT HERE - NEXT ITERATION
+                count++;
+            }
+            else
+                writeToBuff(" )\n", designBuffer);
+
+        }
+    }
+   return strlen(designBuffer);
 }
 
 
-
-
-int ReadPidName(char *designBuffer, int IPinum ) {
-    int proc=-1, procFd, currDirent = 0;
-    char *tmp = "";
-    struct proc *currproc=0;
+int ReadPidName(char *designBuffer, int IPinum) {
+    int proc = -1, procFd, currDirent = 0;
+    char tmp[DIRSIZ];
+    struct proc *currproc = 0;
     char searchDir[20];
 
     procInodeIndex(IPinum, &proc, &procFd, 0);
@@ -444,16 +503,16 @@ int ReadPidName(char *designBuffer, int IPinum ) {
     if (!currproc) //validation check
         panic("ERROR - ReadPidStatus: PROC IS NULL!");
 
-    writeToBuff("/proc/" , searchDir);
-    tmp = itoa( currproc->pid , tmp );
-    writeToBuff( tmp , searchDir);
+    writeToBuff("/proc", searchDir);
+    itoa(currproc->pid, tmp);
+    writeToBuff(tmp, searchDir);
 
     writeDirentToBuff(currDirent, ".", namei(searchDir)->inum, designBuffer);
     currDirent++;
-    writeDirentToBuff(currDirent, "..", namei("/proc/")->inum, designBuffer);
+    writeDirentToBuff(currDirent, "..", namei("/proc")->inum, designBuffer);
     currDirent++;
 
-    writeToBuff( currproc->name , designBuffer );
+    writeToBuff(currproc->name, designBuffer);
     //currDirent++;
 
 
@@ -463,62 +522,65 @@ int ReadPidName(char *designBuffer, int IPinum ) {
     //writeDirentToBuff(currDirent, "status", sbInodes + 2 + ( (proc + 1) * PROCINODES ) , designBuffer);
     //currDirent++;
 
-    return ( sizeof(struct dirent) * currDirent + sizeof(currproc->name));
+    return (sizeof(struct dirent) * currDirent + sizeof(currproc->name));
 }
 
 
+int ReadPidStatus(char *designBuffer, int IPinum) {
+    char tmp[DIRSIZ];
+    int proc = -1, procFd;
+    procInodeIndex(IPinum, &proc, &procFd, 0);
 
-int ReadPidStatus(char *designBuffer, int IPinum ) {
-    char *tmp = "";
-    int proc=-1,procFd;
-    procInodeIndex(IPinum,&proc,&procFd,0);
-
-    struct proc *currproc=0;
-    currproc= getProc(proc);
+    struct proc *currproc = 0;
+    currproc = getProc(proc);
     if (!currproc) //validation check
         panic("ERROR - ReadPidStatus: PROC IS NULL!");
 
     //START WRITE - NAME OF FOLDER
-    writeToBuff("/proc/", designBuffer);
-    tmp = itoa(currproc->pid, tmp);
-    writeToBuff(tmp,designBuffer);
-    writeToBuff("/status",designBuffer);
-    writeToBuff("\n run state:\t",designBuffer);
-    tmp="";
-    switch(currproc->state){
+    writeToBuff("/proc", designBuffer);
+    itoa(currproc->pid, tmp);
+    writeToBuff(tmp, designBuffer);
+    writeToBuff("/status", designBuffer);
+    writeToBuff("\n run state:\t", designBuffer);
+    cleanName(tmp);
+    switch (currproc->state) {
         case RUNNING:
-            tmp="RUNNING";
+            writeToBuff("RUNNING",tmp);
+//            tmp = "RUNNING";
             break;
         case RUNNABLE:
-            tmp="RUNNABLE";
+            writeToBuff("RUNNABLE",tmp);
+//            tmp = "RUNNABLE";
             break;
         case SLEEPING:
-            tmp="SLEEPING";
+            writeToBuff("SLEEPING",tmp);
+//            tmp = "SLEEPING";
             break;
         case UNUSED:
-            tmp="UNUSED";
+            writeToBuff("UNUSED",tmp);
+//            tmp = "UNUSED";
             break;
         case ZOMBIE:
-            tmp="ZOMBIE";
+            writeToBuff("ZOMBIE",tmp);
+//            tmp = "ZOMBIE";
             break;
         case EMBRYO:
-            tmp="EMBRYO";
+            writeToBuff("EMBRYO",tmp);
+//            tmp = "EMBRYO";
             break;
         default:
             panic("ERROR - WRONG STATE");
     }
-    writeToBuff(tmp,designBuffer);
-    tmp="";
-    writeToBuff("\nsize (in bytes):\t",designBuffer);
-    tmp=itoa(currproc->sz,tmp);
-    writeToBuff(tmp,designBuffer);
-    writeToBuff("\n",designBuffer);
+    writeToBuff(tmp, designBuffer);
+    cleanName(tmp);
+    writeToBuff("\nsize (in bytes):\t", designBuffer);
+    itoa(currproc->sz, tmp);
+    writeToBuff(tmp, designBuffer);
+    writeToBuff("\n", designBuffer);
 
     return sizeof(designBuffer);
 
 }
-
-
 
 
 int
@@ -528,10 +590,11 @@ procfsisdir(struct inode *ip) {
         return 0;
     if (ip->major != PROCFS)
         return 0;
-    if (ip->inum == IDEINFO || ip->inum == FILESTAT || ip->inum == INODEINFO)
+    if (ip->inum == IDEINFO || ip->inum == FILESTAT )//|| ip->inum == INODEINFO)
         return 0;
 
-    return (ip->inum < sbInodes || ip->inum % PROCINODES == 0 || ip->inum % PROCINODES == 1);
+//    return (ip->inum < sbInodes || ip->inum % PROCINODES == 0 || ip->inum % PROCINODES == 1);
+    return (ip->inum < sbInodes || ip->inum % PROCINODES == 0 || ip->inum % PROCINODES == 1|| ip->inum == INODEINFO);
 }
 
 void
@@ -548,6 +611,11 @@ procfsread(struct inode *ip, char *dst, int off, int n) {
 
     char designBuffer[PGSIZE] = {0};
     int answer = 0, IPinum = ip->inum;
+    cprintf("\nGOT inum %d\n" , ip->inum);
+    //cprintf("GOT IDEINFO %d\n" , IDEINFO);
+    //cprintf("GOT FILESTAT %d\n" , FILESTAT);
+    //cprintf("GOT sbInodes %d\n" , sbInodes);
+    //cprintf("GOT VIRTUALINODEINFO %d\n" , VIRTUALINODEINFO);
 
     // procfd = file index after control and space block, or each proc size 50 block
 //    int procfd = (IPinum % PROCINODES) - INODESSPACE;
@@ -568,23 +636,26 @@ procfsread(struct inode *ip, char *dst, int off, int n) {
         goto appliedFunc;
     }
     if (IPinum < sbInodes) {
+//        cprintf("GOT inum map case %d\n" , IPinum);
 
         answer = ReadFromMemInodes(designBuffer, IPinum);
+        //cprintf("GOT ANSWER fuck %d\n" , answer);
 
         goto appliedFunc;
     }
-    if ( (IPinum-sbInodes) % PROCINODES == 0) {
-        answer = ReadPidName ( designBuffer, IPinum );
+    if ((IPinum - sbInodes) % PROCINODES == 0) {
+        answer = ReadPidName(designBuffer, IPinum);
 
         goto appliedFunc;
     }
-    if ( (IPinum-sbInodes) % PROCINODES == 1) {
-        answer = ReadPidStatus ( designBuffer, IPinum );
+    if ((IPinum - sbInodes) % PROCINODES == 1) {
+        answer = ReadPidStatus(designBuffer, IPinum);
         goto appliedFunc;
     }
 
-    if (IPinum >= VIRTUALINODEINFO){
-        answer = ReadVirtInfo ( designBuffer , IPinum);
+    if (IPinum >= VIRTUALINODEINFO) {
+        cprintf("CHECKPOINT1: IPnum: %d\n",IPinum);
+        answer = ReadVirtInfo(designBuffer, IPinum);
 
         goto appliedFunc;
     }
@@ -599,7 +670,7 @@ procfsread(struct inode *ip, char *dst, int off, int n) {
     appliedFunc :
 
     memmove(dst, designBuffer + off, (uint) n);
-    if (answer >= off + n)
+    if (answer - off <= n)
         return (answer - off);
     else
         return n;

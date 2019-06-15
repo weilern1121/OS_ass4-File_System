@@ -1,0 +1,280 @@
+init: starting sh
+ 
+ namiPath is sh 
+ 
+ namiPath is console 
+$  
+ namiPath is generalcheck6 
+
+generalcheck6 test starting...
+
+------------------------------------
+ 
+ namiPath is /proc/inodeinfo 
+
+GOT inum 10
+ 
+ namiPath is /proc 
+ 
+ namiPath is  
+
+GOT inum 10
+ 
+ namiPath is /proc 
+ 
+ namiPath is  
+
+GOT inum 10
+ 
+ namiPath is /proc 
+ 
+ namiPath is  
+
+GOT inum 10
+ 
+ namiPath is /proc 
+ 
+ namiPath is  
+
+GOT inum 10
+ 
+ namiPath is /proc 
+ 
+ namiPath is  
+
+GOT inum 203
+*validInum[i]=0
+writeDirentToBuff i= 0	virt_offset=3464
+*validInum[i]=1
+writeDirentToBuff i= 1	virt_offset=3465
+*validInum[i]=2
+writeDirentToBuff i= 2	virt_offset=3466
+*validInum[i]=3
+writeDirentToBuff i= 3	virt_offset=3467
+ 
+ namiPath is /proc/inodeinfo/0 
+
+GOT inum 10
+ 
+ namiPath is /proc 
+ 
+ namiPath is  
+
+GOT inum 10
+ 
+ namiPath is /proc 
+ 
+ namiPath is  
+
+GOT inum 10
+ 
+ namiPath is /proc 
+ 
+ namiPath is  
+
+GOT inum 10
+ 
+ namiPath is /proc 
+ 
+ namiPath is  
+
+GOT inum 10
+ 
+ namiPath is /proc 
+ 
+ namiPath is  
+
+GOT inum 203
+*validInum[i]=0
+writeDirentToBuff i= 0	virt_offset=3464
+*validInum[i]=1
+writeDirentToBuff i= 1	virt_offset=3465
+*validInum[i]=2
+writeDirentToBuff i= 2	virt_offset=3466
+*validInum[i]=3
+writeDirentToBuff i= 3	virt_offset=3467
+0              3 3464 0
+
+GOT inum 203
+*validInum[i]=0
+writeDirentToBuff i= 0	virt_offset=3464
+*validInum[i]=1
+writeDirentToBuff i= 1	virt_offset=3465
+*validInum[i]=2
+writeDirentToBuff i= 2	virt_offset=3466
+*validInum[i]=3
+writeDirentToBuff i= 3	virt_offset=3467
+ 
+ namiPath is /proc/inodeinfo/1 
+
+GOT inum 10
+ 
+ namiPath is /proc 
+ 
+ namiPath is  
+
+GOT inum 10
+ 
+ namiPath is /proc 
+ 
+ namiPath is  
+
+GOT inum 10
+ 
+ namiPath is /proc 
+ 
+ namiPath is  
+
+GOT inum 10
+ 
+ namiPath is /proc 
+ 
+ namiPath is  
+
+GOT inum 10
+ 
+ namiPath is /proc 
+ 
+ namiPath is  
+
+GOT inum 203
+*validInum[i]=0
+writeDirentToBuff i= 0	virt_offset=3464
+*validInum[i]=1
+writeDirentToBuff i= 1	virt_offset=3465
+*validInum[i]=2
+writeDirentToBuff i= 2	virt_offset=3466
+*validInum[i]=3
+writeDirentToBuff i= 3	virt_offset=3467
+
+GOT inum 203
+*validInum[i]=0
+writeDirentToBuff i= 0	virt_offset=3464
+*validInum[i]=1
+writeDirentToBuff i= 1	virt_offset=3465
+*validInum[i]=2
+writeDirentToBuff i= 2	virt_offset=3466
+*validInum[i]=3
+writeDirentToBuff i= 3	virt_offset=3467
+1              3 3465 0
+
+GOT inum 203
+*validInum[i]=0
+writeDirentToBuff i= 0	virt_offset=3464
+*validInum[i]=1
+writeDirentToBuff i= 1	virt_offset=3465
+*validInum[i]=2
+writeDirentToBuff i= 2	virt_offset=3466
+*validInum[i]=3
+writeDirentToBuff i= 3	virt_offset=3467
+ 
+ namiPath is /proc/inodeinfo/2 
+
+GOT inum 10
+ 
+ namiPath is /proc 
+ 
+ namiPath is  
+
+GOT inum 10
+ 
+ namiPath is /proc 
+ 
+ namiPath is  
+
+GOT inum 10
+ 
+ namiPath is /proc 
+ 
+ namiPath is  
+
+GOT inum 10
+ 
+ namiPath is /proc 
+ 
+ namiPath is  
+
+GOT inum 10
+ 
+ namiPath is /proc 
+ 
+ namiPath is  
+
+GOT inum 203
+*validInum[i]=0
+writeDirentToBuff i= 0	virt_offset=3464
+*validInum[i]=1
+writeDirentToBuff i= 1	virt_offset=3465
+*validInum[i]=2
+writeDirentToBuff i= 2	virt_offset=3466
+*validInum[i]=3
+writeDirentToBuff i= 3	virt_offset=3467
+
+GOT inum 203
+*validInum[i]=0
+writeDirentToBuff i= 0	virt_offset=3464
+*validInum[i]=1
+writeDirentToBuff i= 1	virt_offset=3465
+*validInum[i]=2
+writeDirentToBuff i= 2	virt_offset=3466
+*validInum[i]=3
+writeDirentToBuff i= 3	virt_offset=3467
+
+GOT inum 203
+*validInum[i]=0
+writeDirentToBuff i= 0	virt_offset=3464
+*validInum[i]=1
+writeDirentToBuff i= 1	virt_offset=3465
+*validInum[i]=2
+writeDirentToBuff i= 2	virt_offset=3466
+*validInum[i]=3
+writeDirentToBuff i= 3	virt_offset=3467
+2              3 3466 0
+
+GOT inum 203
+*validInum[i]=0
+writeDirentToBuff i= 0	virt_offset=3464
+*validInum[i]=1
+writeDirentToBuff i= 1	virt_offset=3465
+*validInum[i]=2
+writeDirentToBuff i= 2	virt_offset=3466
+*validInum[i]=3
+writeDirentToBuff i= 3	virt_offset=3467
+
+------------------------------------
+ 
+ namiPath is /proc/inodeinfo 
+
+GOT inum 10
+ 
+ namiPath is /proc 
+ 
+ namiPath is  
+
+GOT inum 10
+ 
+ namiPath is /proc 
+ 
+ namiPath is  
+
+GOT inum 10
+ 
+ namiPath is /proc 
+ 
+ namiPath is  
+
+GOT inum 10
+ 
+ namiPath is /proc 
+ 
+ namiPath is  
+
+GOT inum 10
+ 
+ namiPath is /proc 
+ 
+ namiPath is  
+generalcheck6 test exiting...
+$ $  
+ namiPath is quitXV6 
+Finished Yehonatan Peleg Test, quiting...

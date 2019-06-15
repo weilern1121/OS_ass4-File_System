@@ -167,40 +167,34 @@ iderw(struct buf *b)
   release(&idelock);
 }
 
-struct buf* getIdeQeueue(int flag){
-  /*struct buf *pp;
+
+int getIdeQeueue(int *numO, int *readO, int *writeO, int *workblock, int *workdev){
+  struct buf *pp;
   int numOp = 0, readOp = 0, writeOp = 0;
-  char *workBlock[PGSIZE];
-  char *tmp;
+  int i = 0;
 
   acquire(&idelock);
 
   pp = idequeue;
   while(pp){
-    tmp = "";
     numOp++;
     if(pp->flags & IDE_CMD_READ) //READ OPERATION
       readOp++;
     if(pp->flags & IDE_CMD_WRITE) //WRITE OPERATION
       writeOp++;
+    workblock[i] = pp->blockno;
+    workdev[i] = pp->dev;
 
-    tmp = itoa(pp->dev, tmp);
-
-
-
-
+    i++;
     pp=pp->next;
   }
 
 
+  *numO = numOp;
+  *readO = readOp;
+  *writeO = writeOp;
 
-  */
-  if(flag){
-    acquire(&idelock);
-    return idequeue;
-  } else {
-    release(&idelock);
-    return 0;
-  }
+  release(&idelock);
+  return i;
 
 }
