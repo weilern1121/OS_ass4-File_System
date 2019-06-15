@@ -104,7 +104,7 @@ generalcheck3
     vector<string> test_4_UserPrograms = {"quitXV6","generalcheck3"};
     vector<string> test_4_DefaultUserPrograms = {"sh", "init","ls", "echo", "cat"};
     string test_4_Hint = "opening and reading /proc/ideinfo"; 
-    int test_4_time_limit = 600000;
+    int test_4_time_limit = 3600000;
 
     string test_5_Input = R"V0G0N(
 generalcheck4
@@ -132,7 +132,7 @@ generalcheck5
     vector<string> test_6_UserPrograms = {"quitXV6","generalcheck5"};
     vector<string> test_6_DefaultUserPrograms = {"sh", "init","ls", "echo", "cat"};
     string test_6_Hint = "opening and reading /proc/filestat"; 
-    int test_6_time_limit = 600000;
+    int test_6_time_limit = 3600000;
 
     string test_7_Input = R"V0G0N(
 generalcheck6
@@ -160,7 +160,7 @@ generalcheck7
     vector<string> test_8_UserPrograms = {"quitXV6","generalcheck7"};
     vector<string> test_8_DefaultUserPrograms = {"sh", "init","ls", "echo", "cat"};
     string test_8_Hint = "opening and reading /proc/inodeinfo"; 
-    int test_8_time_limit = 600000;
+    int test_8_time_limit = 3600000;
 
     string test_9_Input = R"V0G0N(
 generalcheck8

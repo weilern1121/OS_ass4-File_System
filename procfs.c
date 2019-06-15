@@ -289,8 +289,8 @@ int ReadFromInodeInfo(char *designBuffer, int IPinum) {
     int count = readIcacheFS(validInum);
     for(int i=0; i<count; i++){
         itoa(i, tmp);
-        cprintf("*validInum[i]=%d\n",validInum[i]);
-        cprintf("writeDirentToBuff i= %d\tvirt_offset=%d\n",i,VIRTUALINODEINFO + validInum[i]);
+        //cprintf("*validInum[i]=%d\n",validInum[i]);
+        //cprintf("writeDirentToBuff i= %d\tvirt_offset=%d\n",i,VIRTUALINODEINFO + validInum[i]);
         writeDirentToBuff(i, tmp, VIRTUALINODEINFO + validInum[i], designBuffer);
         cleanName(tmp);
     }
@@ -602,7 +602,7 @@ procfsiread(struct inode *dp, struct inode *ip) {
     ip->major = PROCFS;
     ip->valid = VALID;  //todo - maybe need to turn on flag ->  |=0x2
     ip->type = T_DEV;
-    ip->nlink = 1;//todo
+    //ip->nlink = 1;//todo
 }
 
 int
@@ -611,7 +611,7 @@ procfsread(struct inode *ip, char *dst, int off, int n) {
 
     char designBuffer[PGSIZE] = {0};
     int answer = 0, IPinum = ip->inum;
-    cprintf("\nGOT inum %d\n" , ip->inum);
+    //cprintf("\nGOT inum %d\n" , ip->inum);
     //cprintf("GOT IDEINFO %d\n" , IDEINFO);
     //cprintf("GOT FILESTAT %d\n" , FILESTAT);
     //cprintf("GOT sbInodes %d\n" , sbInodes);

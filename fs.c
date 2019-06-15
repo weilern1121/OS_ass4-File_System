@@ -682,7 +682,7 @@ namex(char *path, int nameiparent, char *name) {
 
 struct inode *
 namei(char *path) {
-    cprintf(" \n namiPath is %s \n" , path );
+    //cprintf(" \n namiPath is %s \n" , path );
     char name[DIRSIZ];
     return namex(path, 0, name);
 }
