@@ -72,20 +72,20 @@ stat(const char *n, struct stat *st)
 {
   int fd;
   int r;
-    printf(1,"\n----------STAT OPEN----------------------\n");
+   /* printf(1,"\n----------STAT OPEN----------------------\n");
     printf(1,"\n----------%s----------------------\n" , n);
-    printf(1,"\n----------type:%d----------------------\n" , st->type );
-
+    printf(1,"\n---------- type:%d ----------------------\n" , st->type );
+*/
   fd = open(n, O_RDONLY);
   if(fd < 0)
     return -1;
-  printf(1,"\n---------STAT FSTAT-------------------\n");
+ /* printf(1,"\n---------STAT FSTAT-------------------\n");
   printf(1,"\n---------FD: %d-------------------\n", fd);
-
+*/
   r = fstat(fd, st);
-  printf(1,"\n----------STATDONE--------------------\n");
+//  printf(1,"\n----------STATDONE--------------------\n");
   close(fd);
-  printf(1,"\n----------STATRETURN--------------------\n");
+//  printf(1,"\n----------STATRETURN--------------------\n");
   return r;
 }
 

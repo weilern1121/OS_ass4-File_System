@@ -1,15 +1,25 @@
-Output should have contain this: 
+@
+1
+generalcheck12 test starting...
+1
 generalcheck12 test exiting...
-1 times but contained it 0 times
-Output should have contain this: 
+0
+error reading
+0
+error writing
+0
+ls: cannot open
+0
 ls: cannot stat
-0 times but contained it 1 times
-Output should have contain this: 
+0
+ls: path too long
+0
+fork failed
+0
 cannot stat
-0 times but contained it 1 times
-Output should have contain this: 
+0
+not a device file
+1
 name
-1 times but contained it 2 times
-Output should have contain this: 
+1
 status
-1 times but contained it 0 times

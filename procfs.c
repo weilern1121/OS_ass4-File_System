@@ -509,38 +509,42 @@ int ReadFromIdeInfo(char *designBuffer, int IPinum) {
 }
 
 
-int ReadPidName(char *designBuffer, int IPinum) {
+int ReadPid(char *designBuffer, int IPinum) {
     int proc = -1, currDirent = 0;
     char tmp[DIRSIZ];
     struct proc *currproc = 0;
-    char searchDir[20];
+    char searchDir[40] = {0};
 
 //    procInodeIndex(IPinum, &proc, &procFd, 0);
     if (IPinum >= sbInodes + PROCINODES) {
         proc = ((IPinum - sbInodes) / PROCINODES) - 1;
     }
 
-    cprintf("SBINODE: %d \tGETPROC : %d\n",sbInodes,proc);
+//    cprintf("SBINODE: %d \tGETPROC : %d\n",sbInodes,proc);
 
     currproc = getProc(proc);
-    cprintf("AFTER GETPROC");
+//    cprintf("AFTER GETPROC");
 
 
     if (!currproc) //validation check
         panic("ERROR - ReadPidStatus: PROC IS NULL!");
 
-    writeToBuff("/proc", searchDir);
+    writeToBuff("/proc/", searchDir);
     itoa(currproc->pid, tmp);
     writeToBuff(tmp, searchDir);
 
-//    writeDirentToBuff(currDirent, ".", namei(searchDir)->inum, designBuffer);
-//    currDirent++;
+    writeDirentToBuff(currDirent, ".", IPinum, designBuffer);
+    currDirent++;
     writeDirentToBuff(currDirent, "..", namei("/proc")->inum, designBuffer);
     currDirent++;
+    writeDirentToBuff(currDirent, "name", IPinum + 1, designBuffer);
+    currDirent++;
+    writeDirentToBuff(currDirent, "status", IPinum + 2, designBuffer);
+    currDirent++;
 
-    writeToBuff("kname", designBuffer);
-//    writeToBuff(currproc->name, designBuffer);//TODO - WRONG VALUE HERE
-    //currDirent++;
+//    writeToBuff(currproc->name, searchDir);
+//    writeToBuff("/name", searchDir);
+//    cprintf("\nSEARCHDIR: %s\n",searchDir);
 
 
     //TODO how to link the name of process
@@ -549,11 +553,33 @@ int ReadPidName(char *designBuffer, int IPinum) {
     //writeDirentToBuff(currDirent, "status", sbInodes + 2 + ( (proc + 1) * PROCINODES ) , designBuffer);
     //currDirent++;
 
-    return strlen(designBuffer);
+    return sizeof(struct dirent) * currDirent;
+//    return strlen(designBuffer);
 
 //    return (sizeof(struct dirent) * currDirent + sizeof(currproc->name));
 }
 
+
+
+int ReadPidName(char *designBuffer, int IPinum) {
+    int proc = -1;
+    struct proc *currproc = 0;
+
+    if (IPinum >= sbInodes + PROCINODES) {
+        proc = ((IPinum - sbInodes) / PROCINODES) - 1;
+    }
+
+   currproc = getProc(proc);
+//   cprintf("AFTER GETPROC");
+
+
+    if (!currproc) //validation check
+        panic("ERROR - ReadPidStatus: PROC IS NULL!");
+
+    writeToBuff(currproc->name, designBuffer);
+    return strlen(designBuffer);
+
+}
 
 
 int ReadPidStatus(char *designBuffer, int IPinum) {
@@ -567,36 +593,30 @@ int ReadPidStatus(char *designBuffer, int IPinum) {
         panic("ERROR - ReadPidStatus: PROC IS NULL!");
 
     //START WRITE - NAME OF FOLDER
-    writeToBuff("/proc", designBuffer);
-    itoa(currproc->pid, tmp);
-    writeToBuff(tmp, designBuffer);
-    writeToBuff("/status", designBuffer);
-    writeToBuff("\n run state:\t", designBuffer);
+//    writeToBuff("/proc", designBuffer);
+//    itoa(currproc->pid, tmp);
+//    writeToBuff(tmp, designBuffer);
+//    writeToBuff("/status", designBuffer);
+    writeToBuff("run state:\t", designBuffer);
     cleanName(tmp);
     switch (currproc->state) {
         case RUNNING:
             writeToBuff("RUNNING",tmp);
-//            tmp = "RUNNING";
             break;
         case RUNNABLE:
             writeToBuff("RUNNABLE",tmp);
-//            tmp = "RUNNABLE";
             break;
         case SLEEPING:
             writeToBuff("SLEEPING",tmp);
-//            tmp = "SLEEPING";
             break;
         case UNUSED:
             writeToBuff("UNUSED",tmp);
-//            tmp = "UNUSED";
             break;
         case ZOMBIE:
             writeToBuff("ZOMBIE",tmp);
-//            tmp = "ZOMBIE";
             break;
         case EMBRYO:
             writeToBuff("EMBRYO",tmp);
-//            tmp = "EMBRYO";
             break;
         default:
             panic("ERROR - WRONG STATE");
@@ -608,7 +628,7 @@ int ReadPidStatus(char *designBuffer, int IPinum) {
     writeToBuff(tmp, designBuffer);
     writeToBuff("\n", designBuffer);
 
-    return sizeof(designBuffer);
+    return strlen(designBuffer);
 
 }
 
@@ -624,7 +644,8 @@ procfsisdir(struct inode *ip) {
         return 0;
 
 //    return (ip->inum < sbInodes || ip->inum % PROCINODES == 0 || ip->inum % PROCINODES == 1);
-    return (ip->inum < sbInodes || ip->inum % PROCINODES == 0 || ip->inum % PROCINODES == 1|| ip->inum == INODEINFO);
+    return (ip->inum < sbInodes || ip->inum % PROCINODES == 0 || ip->inum == INODEINFO);
+//    return (ip->inum < sbInodes || ip->inum % PROCINODES == 0 || ip->inum % PROCINODES == 1|| ip->inum == INODEINFO);
 }
 
 void
@@ -632,7 +653,7 @@ procfsiread(struct inode *dp, struct inode *ip) {
     ip->major = PROCFS;
     ip->valid = VALID;  //todo - maybe need to turn on flag ->  |=0x2
     ip->type = T_DEV;
-    //ip->nlink = 1;//todo
+    ip->nlink = 1;//todo
 }
 
 int
@@ -674,12 +695,18 @@ procfsread(struct inode *ip, char *dst, int off, int n) {
         goto appliedFunc;
     }
     if ((IPinum - sbInodes) % PROCINODES == 0) {
-        cprintf("CHECKPOINT1: IPnum: %d\n",IPinum);
-        answer = ReadPidName(designBuffer, IPinum);
+//        cprintf("CHECKPOINT1: IPnum: %d\n",IPinum);
+        answer = ReadPid(designBuffer, IPinum);
 
         goto appliedFunc;
     }
     if ((IPinum - sbInodes) % PROCINODES == 1) {
+//        cprintf("CHECKPOINT1: IPnum: %d\n",IPinum);
+        answer = ReadPidName(designBuffer, IPinum);
+
+        goto appliedFunc;
+    }
+    if ((IPinum - sbInodes) % PROCINODES == 2) {
 
         answer = ReadPidStatus(designBuffer, IPinum);
         goto appliedFunc;
