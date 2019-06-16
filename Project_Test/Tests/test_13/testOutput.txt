@@ -1,0 +1,57 @@
+init: starting sh
+$ 
+generalcheck12 test starting...
+
+------------------------------------
+
+GOT inum 10
+
+GOT inum 10
+
+GOT inum 10
+
+GOT inum 10
+
+GOT inum 10
+
+GOT inum 10
+
+GOT inum 10
+
+GOT inum 10
+
+GOT inum 350
+CHECKPOINT1: IPnum: 350
+SBINODE: 200 	GETPROC : 2
+AFTER GETPROC
+----------STAT OPEN----------------------
+
+----------/proc/3/name˚çhﬁ˚ç≥!Ä----------------------
+
+----------type:3----------------------
+
+GOT inum 10
+
+GOT inum 10
+
+GOT inum 10
+
+GOT inum 10
+
+GOT inum 10
+
+GOT inum 10
+
+GOT inum 10
+
+GOT inum 10
+
+GOT inum 350
+CHECKPOINT1: IPnum: 350
+SBINODE: 200 	GETPROC : 2
+AFTER GETPROC
+GOT inum 350
+CHECKPOINT1: IPnum: 350
+SBINODE: 200 	GETPROC : 2
+AFTER GETPROCls: cannot stat /proc/3/name˚çhﬁ˚ç≥!Ä
+$ $ Finished Yehonatan Peleg Test, quiting...

@@ -168,7 +168,7 @@ mkfs: mkfs.c fs.h
 
 UPROGS=\
 	_quitXV6\
-	_generalcheck7\
+	_generalcheck12\
 	_sh\
 	_init\
 	_ls\
@@ -283,11 +283,11 @@ _quitXV6: $(ULIB)
 	objdump -S _quitXV6 > quitXV6.asm
 	$(OBJDUMP) -t _quitXV6 | sed '1,/SYMBOL TABLE/d; s/ .* / /; /^$$/d' > quitXV6.sym
 
-_generalcheck7: $(ULIB)
-	gcc -Werror -fno-pic -static -fno-builtin -fno-strict-aliasing -O2 -Wall -MD -ggdb -m32 -fno-omit-frame-pointer -fno-stack-protector -fno-pie -no-pie -c -o generalcheck7.o ./Project_Test/XV6_Tests/generalcheck7.c
-	ld -m elf_i386 -N -e main -Ttext 0 -o _generalcheck7 generalcheck7.o $(ULIB)
-	objdump -S _generalcheck7 > generalcheck7.asm
-	$(OBJDUMP) -t _generalcheck7 | sed '1,/SYMBOL TABLE/d; s/ .* / /; /^$$/d' > generalcheck7.sym
+_generalcheck12: $(ULIB)
+	gcc -Werror -fno-pic -static -fno-builtin -fno-strict-aliasing -O2 -Wall -MD -ggdb -m32 -fno-omit-frame-pointer -fno-stack-protector -fno-pie -no-pie -c -o generalcheck12.o ./Project_Test/XV6_Tests/generalcheck12.c
+	ld -m elf_i386 -N -e main -Ttext 0 -o _generalcheck12 generalcheck12.o $(ULIB)
+	objdump -S _generalcheck12 > generalcheck12.asm
+	$(OBJDUMP) -t _generalcheck12 | sed '1,/SYMBOL TABLE/d; s/ .* / /; /^$$/d' > generalcheck12.sym
 
 _sh: $(ULIB)
 	gcc -Werror -fno-pic -static -fno-builtin -fno-strict-aliasing -O2 -Wall -MD -ggdb -m32 -fno-omit-frame-pointer -fno-stack-protector -fno-pie -no-pie -c -o sh.o sh.c
