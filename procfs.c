@@ -662,7 +662,7 @@ procfsread(struct inode *ip, char *dst, int off, int n) {
 
     char designBuffer[PGSIZE] = {0};
     int answer = 0, IPinum = ip->inum;
-    cprintf("\nGOT inum %d\n" , ip->inum);
+//    cprintf("\nGOT inum %d\n" , ip->inum);
     //cprintf("GOT IDEINFO %d\n" , IDEINFO);
     //cprintf("GOT FILESTAT %d\n" , FILESTAT);
     //cprintf("GOT sbInodes %d\n" , sbInodes);
