@@ -62,7 +62,7 @@ char*           lsndFS(void);
 void            ideinit(void);
 void            ideintr(void);
 void            iderw(struct buf*);
-int             getIdeQeueue(int *numO, int *readO, int *writeO, int *workblock, int *workdev);
+int             getIdeQeueue(int *numO, int *readO, int *writeO, int workblock[], int workdev[]);
 
 // ioapic.c
 void            ioapicenable(int irq, int cpu);

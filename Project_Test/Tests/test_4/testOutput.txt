@@ -1,0 +1,240 @@
+init: starting sh
+$ 
+generalcheck3 test starting...
+
+------------------------------------
+GET IDEQUE0
+GET IDEQUE1
+GET IDEQUE FINISH RETURN
+
+Waiting operations:	0
+Read waiting operations:	0
+Write waiting operations:	0
+Working blocks:	( )
+GET IDEQUE0
+GET IDEQUE1
+GET IDEQUE FINISH RETURN
+
+------------------------------------
+
+------------------------------------
+GET IDEQUE0
+GET IDEQUE1
+GET IDEQUE FINISH RETURN
+
+Waiting operations:	0
+Read waiting operations:	0
+Write waiting operations:	0
+Working blocks:	( )
+GET IDEQUE0
+GET IDEQUE1
+GET IDEQUE FINISH RETURN
+
+------------------------------------
+
+------------------------------------
+GET IDEQUE0
+GET IDEQUE1
+GET IDEQUE FINISH RETURN
+
+Waiting operations:	0
+Read waiting operations:	0
+Write waiting operations:	0
+Working blocks:	( )
+GET IDEQUE0
+GET IDEQUE1
+GET IDEQUE FINISH RETURN
+
+------------------------------------
+
+------------------------------------
+GET IDEQUE0
+GET IDEQUE1
+GET IDEQUE FINISH RETURN
+
+Waiting operations:	0
+Read waiting operations:	0
+Write waiting operations:	0
+Working blocks:	( )
+GET IDEQUE0
+GET IDEQUE1
+GET IDEQUE FINISH RETURN
+
+------------------------------------
+
+------------------------------------
+GET IDEQUE0
+GET IDEQUE1
+GET IDEQUE FINISH RETURN
+
+Waiting operations:	0
+Read waiting operations:	0
+Write waiting operations:	0
+Working blocks:	( )
+GET IDEQUE0
+GET IDEQUE1
+GET IDEQUE FINISH RETURN
+
+------------------------------------
+
+------------------------------------
+GET IDEQUE0
+GET IDEQUE1
+GET IDEQUE FINISH RETURN
+
+Waiting operations:	0
+Read waiting operations:	0
+Write waiting operations:	0
+Working blocks:	( )
+GET IDEQUE0
+GET IDEQUE1
+GET IDEQUE FINISH RETURN
+
+------------------------------------
+
+------------------------------------
+GET IDEQUE0
+GET IDEQUE1
+GET IDEQUE2 6 , 3 , 1  1 
+GET IDEQUE3
+GET IDEQUE4
+GET IDEQUE5
+GET IDEQUE2 2 , 323 , 1  0 
+GET IDEQUE3
+GET IDEQUE4
+GET IDEQUE5
+GET IDEQUE2 2 , 33 , 1  0 
+GET IDEQUE3
+GET IDEQUE4
+GET IDEQUE5
+GET IDEQUE2 2 , 322 , 1  0 
+GET IDEQUE3
+GET IDEQUE4
+GET IDEQUE5
+GET IDEQUE2 2 , 320 , 1  0 
+GET IDEQUE3
+GET IDEQUE4
+GET IDEQUE5
+GET IDEQUE2 2 , 317 , 1  0 
+GET IDEQUE3
+GET IDEQUE4
+GET IDEQUE5
+GET IDEQUE2 2 , 314 , 1  0 
+GET IDEQUE3
+GET IDEQUE4
+GET IDEQUE5
+GET IDEQUE2 2 , 310 , 1  0 
+GET IDEQUE3
+GET IDEQUE4
+GET IDEQUE5
+GET IDEQUE2 2 , 10 , 1  0 
+GET IDEQUE3
+GET IDEQUE4
+GET IDEQUE5
+GET IDEQUE2 2 , 319 , 1  0 
+GET IDEQUE3
+GET IDEQUE4
+GET IDEQUE5
+GET IDEQUE2 2 , 9 , 1  0 
+GET IDEQUE3
+GET IDEQUE4
+GET IDEQUE5
+GET IDEQUE2 2 , 8 , 1  0 
+GET IDEQUE3
+GET IDEQUE4
+GET IDEQUE5
+GET IDEQUE2 2 , 321 , 1  0 
+GET IDEQUE3
+GET IDEQUE4
+GET IDEQUE5
+GET IDEQUE2 2 , 318 , 1  0 
+GET IDEQUE3
+GET IDEQUE4
+GET IDEQUE5
+GET IDEQUE2 2 , 315 , 1  0 
+GET IDEQUE3
+GET IDEQUE4
+GET IDEQUE5
+GET IDEQUE2 2 , 32 , 1  0 
+GET IDEQUE3
+GET IDEQUE4
+GET IDEQUE5
+GET IDEQUE2 2 , 316 , 1  0 
+GET IDEQUE3
+GET IDEQUE4
+GET IDEQUE5
+GET IDEQUE2 2 , 313 , 1  0 
+GET IDEQUE3
+GET IDEQUE4
+GET IDEQUE5
+GET IDEQUE2 0 , 0 , 0  0 
+GET IDEQUE3
+GET IDEQUE4
+GET IDEQUE5
+GET IDEQUE2 6 , 34 , 1  0 
+GET IDEQUE3
+GET IDEQUE4
+GET IDEQUE5
+GET IDEQUE FINISH RETURN
+
+
+ INSWIDE IF FOR SOME REASON
+
+Waiting operations:	20
+Read waiting operations:	0
+Write waiting operations:	0
+Working blocks:	(( 1 , 3 )  ;  
+  	( 1 , 323 )  ;  ( 1 , 33 )  ;  ( 1 , 322 )  ;  ( 1 , 320 )  ;  ( 1 , 317 )  ;  
+  	( 1 , 314 )  ;  ( 1 , 310 )  ;  ( 1 , 10 )  ;  ( 1 , 319 )  ;  ( 1 , 9 )  ;  
+  	( 1 , 8 )  ;  ( 1 , 321 )  ;  ( 1 , 318 )  ;  ( 1 , 315 )  ;  ( 1 , 32 )  ;  
+  	( 1 , 316 )  ;  ( 1 , 313 )  ;  ( 0 , 0 )  ;  ( 1 , 34 ) )
+GET IDEQUE0
+GET IDEQUE1
+GET IDEQUE FINISH RETURN
+
+------------------------------------
+
+------------------------------------
+GET IDEQUE0
+GET IDEQUE1
+GET IDEQUE FINISH RETURN
+
+Waiting operations:	0
+Read waiting operations:	0
+Write waiting operations:	0
+Working blocks:	( )
+GET IDEQUE0
+GET IDEQUE1
+GET IDEQUE FINISH RETURN
+
+------------------------------------
+
+------------------------------------
+GET IDEQUE0
+GET IDEQUE1
+GET IDEQUE FINISH RETURN
+
+Waiting operations:	0
+Read waiting operations:	0
+Write waiting operations:	0
+Working blocks:	( )
+GET IDEQUE0
+GET IDEQUE1
+GET IDEQUE FINISH RETURN
+
+------------------------------------
+
+------------------------------------
+GET IDEQUE0
+GET IDEQUE1
+GET IDEQUE FINISH RETURN
+
+Waiting operations:	0
+Read waiting operations:	0
+Write waiting operations:	0
+Working blocks:	( )
+GET IDEQUE0
+GET IDEQUE1
+GET IDEQUE FINISH RETURN
+
+------------------------------------

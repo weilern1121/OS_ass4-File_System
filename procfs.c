@@ -308,12 +308,12 @@ int ReadVirtInfo(char *designBuffer, int IPinum) {
 int ReadFromIdeInfo(char *designBuffer, int IPinum) {
 
     int waitingCounter = 0, readCounter = 0, writeCounter = 0;
-    int *block[100] = {0};
-    int *dev[100] = {0};
+    int block[20] = {0};
+    int dev[20] = {0};
     char tmp[DIRSIZ];
 
     int listSize = getIdeQeueue( &waitingCounter, &readCounter, &writeCounter,
-                               *block, *dev);
+                               block, dev);
 
 
     writeToBuff("\nWaiting operations:\t", designBuffer);
@@ -347,19 +347,17 @@ int ReadFromIdeInfo(char *designBuffer, int IPinum) {
     writeToBuff("(", designBuffer);
 
     int count = 0;
-    if (listSize == 0) { //IF EMPTY PTR ->EMPTY LIST
-        writeToBuff(" )\n", designBuffer);
-    } else { //ELSE -> ITERATE  OVER THE LIST
-
+    if (listSize > 0) { //IF EMPTY PTR ->EMPTY LIST
+        cprintf("\n\n INSWIDE IF FOR SOME REASON\n");
         int k = 0;
         while( k < listSize ) {
             writeToBuff("( ", designBuffer);
-            itoa(*dev[k], tmp);
+            itoa(dev[k], tmp);
             writeToBuff(tmp, designBuffer);
             writeToBuff(" , ", designBuffer);
 
             cleanName(tmp);
-            itoa(*block[k], tmp);
+            itoa(block[k], tmp);
             writeToBuff(tmp, designBuffer);
             writeToBuff(" )", designBuffer);
 
@@ -376,6 +374,9 @@ int ReadFromIdeInfo(char *designBuffer, int IPinum) {
                 writeToBuff(" )\n", designBuffer);
 
         }
+
+    } else { //ELSE -> ITERATE  OVER THE LIST
+        writeToBuff(" )\n", designBuffer);
     }
    return strlen(designBuffer);
 }
@@ -509,7 +510,10 @@ procfsread(struct inode *ip, char *dst, int off, int n) {
 
     char designBuffer[PGSIZE] = {0};
     int answer = 0, IPinum = ip->inum;
-    cprintf("\nGOT inum %d\n" , ip->inum);
+
+
+
+    //cprintf("\nGOT inum %d\n" , ip->inum);
 
     if (IPinum == IDEINFO) {
         answer = ReadFromIdeInfo(designBuffer, IPinum);

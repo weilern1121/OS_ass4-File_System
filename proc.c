@@ -551,6 +551,7 @@ int getValidProcs( int* validProcs ){
   return output;
 }
 
+/*
 struct file** getProcFile( int fileIndex ){
   struct proc *p = ptable.proc;
 
@@ -576,7 +577,7 @@ struct inode* getInode( int fileIndex ){
   for(int i=0 ; i < fileIndex; i++ , p++);//move p for the specific proc
   release(&ptable.lock);
   return p->cwd;
-}
+}*/
 
 struct proc* getProc( int fileIndex ){
   struct proc *p=0;
