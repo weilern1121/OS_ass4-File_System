@@ -144,7 +144,8 @@ void ls(char *path){
   if(strlen(path) + 1 + DIRSIZ + 1 > sizeof buf){
       printf(1, "ls: path too long\n");
       exit();
-  }printf(1,"\n---------BEFOREWHILE----------------------\n");
+  }
+  //printf(1,"\n---------BEFOREWHILE----------------------\n");
 
   strcpy(buf, path);
   p = buf+strlen(buf);
@@ -152,14 +153,14 @@ void ls(char *path){
   while(read(fd, &de, sizeof(de)) == sizeof(de)){
     memmove(p, de.name, DIRSIZ);
     p[DIRSIZ] = 0;
-    printf(1,"\n-------BEFORESTAT--------------------\n");
+    //printf(1,"\n-------BEFORESTAT--------------------\n");
 
     if(stat(buf, &st) < 0){
         printf(1, "ls: cannot stat %s\n", buf);
         exit();
         continue;
     }
-    printf(1,"\n--------AFTERSTAT---------------------\n");
+    //printf(1,"\n--------AFTERSTAT---------------------\n");
 
     printf(1, "%s %d %d %d\n", fmtname(buf), st.type, st.ino, st.size);
   }

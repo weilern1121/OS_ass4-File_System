@@ -167,6 +167,9 @@
 		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/ls.c">
 			<Option target="ass4"/>
 		</Unit>
+		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/lsnd.c">
+			<Option target="ass4"/>
+		</Unit>
 		<Unit filename="/home/weilern/os192/ass4/OS_ass4-File_System/main.c">
 			<Option target="ass4"/>
 		</Unit>

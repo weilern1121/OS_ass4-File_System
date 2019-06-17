@@ -100,3 +100,10 @@ sys_getProc(void)
     return 0;
   return getProc(pid);
 }
+
+int
+sys_lsndFS(void)
+{
+  lsndFS();
+  return 0;
+}

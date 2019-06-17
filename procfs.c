@@ -284,6 +284,8 @@ int ReadFromInodeInfo(char *designBuffer, int IPinum) {
 //    return sizeof(designBuffer);
 
     cprintf("count=:%d\n",count);*/
+
+
     char tmp[DIRSIZ];
     int validInum[NINODE] = {0};
     int count = readIcacheFS(validInum);
@@ -513,7 +515,7 @@ int ReadPid(char *designBuffer, int IPinum) {
     int proc = -1, currDirent = 0;
     char tmp[DIRSIZ];
     struct proc *currproc = 0;
-    char searchDir[40] = {0};
+    char searchDir[60] = {0};
 
 //    procInodeIndex(IPinum, &proc, &procFd, 0);
     if (IPinum >= sbInodes + PROCINODES) {
@@ -737,7 +739,8 @@ procfsread(struct inode *ip, char *dst, int off, int n) {
 
 int
 procfswrite(struct inode *ip, char *buf, int n) {
-    panic("Cannot write in this system");
+    cprintf("ERROR - Cannot write in this system\n");
+    return -1;
 }
 
 void

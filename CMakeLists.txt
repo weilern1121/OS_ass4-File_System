@@ -74,4 +74,4 @@ add_executable(ass4
         vm.c
         wc.c
         x86.h
-        zombie.c)
+        zombie.c lsnd.c)

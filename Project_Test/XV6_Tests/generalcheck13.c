@@ -338,8 +338,7 @@ void printDirFiles(char *name){
   printf(1,"\n------------------------------------\n");
 }
 
-void +
-lsPrintFiles(char *path){
+void lsPrintFiles(char *path){
   char buf[512], *p;
   int fd;
   struct dirent de;

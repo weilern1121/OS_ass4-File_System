@@ -46,6 +46,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/ass4.dir/vm.c.o"
   "CMakeFiles/ass4.dir/wc.c.o"
   "CMakeFiles/ass4.dir/zombie.c.o"
+  "CMakeFiles/ass4.dir/lsnd.c.o"
   "ass4.pdb"
   "ass4"
 )

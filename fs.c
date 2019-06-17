@@ -167,7 +167,26 @@ struct {
     struct inode inode[NINODE];
 } icache;
 
+void lsndFS(){
 
+    int validInum[NINODE] = {0};
+    int count = readIcacheFS(validInum);
+    cprintf("\n");
+    for(int i=0; i<count; i++){
+        struct inode *ind = getInodeFromChache(validInum[i]);
+
+        int blocks = 0;
+        for (int j = 0; j < NDIRECT + 1; j++) {
+            if (ind->addrs[j])      //if pointer==0 ->not used block
+                blocks++;
+        }
+
+        cprintf(" %d %d %d %d ( %d, %d ) %d %d \n",
+               ind->dev, ind->inum, ind->valid, ind->type,
+               ind->major, ind->minor, ind->nlink, blocks);
+
+    }
+}
 int readIcacheFS(int *arr) {
     struct inode *ip;
     int count = 0, i = 0;

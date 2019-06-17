@@ -24,6 +24,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/weilern/os192/ass4/OS_ass4-File_System/ln.c" "/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles/ass4.dir/ln.c.o"
   "/home/weilern/os192/ass4/OS_ass4-File_System/log.c" "/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles/ass4.dir/log.c.o"
   "/home/weilern/os192/ass4/OS_ass4-File_System/ls.c" "/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles/ass4.dir/ls.c.o"
+  "/home/weilern/os192/ass4/OS_ass4-File_System/lsnd.c" "/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles/ass4.dir/lsnd.c.o"
   "/home/weilern/os192/ass4/OS_ass4-File_System/main.c" "/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles/ass4.dir/main.c.o"
   "/home/weilern/os192/ass4/OS_ass4-File_System/memide.c" "/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles/ass4.dir/memide.c.o"
   "/home/weilern/os192/ass4/OS_ass4-File_System/mkdir.c" "/home/weilern/os192/ass4/OS_ass4-File_System/cmake-build-debug/CMakeFiles/ass4.dir/mkdir.c.o"

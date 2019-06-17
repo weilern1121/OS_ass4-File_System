@@ -1,0 +1,15 @@
+nmeta 59 (boot, super, log blocks 30 inode blocks 26, bitmap blocks 1) blocks 941 total 1000
+balloc: first 361 blocks have been allocated
+balloc: write bitmap block at sector 58
+boot block is 448 bytes (max 510)
+10000+0 records in
+10000+0 records out
+5120000 bytes (5.1 MB, 4.9 MiB) copied, 0.0821657 s, 62.3 MB/s
+1+0 records in
+1+0 records out
+512 bytes copied, 0.000184565 s, 2.8 MB/s
+411+1 records in
+411+1 records out
+210784 bytes (211 kB, 206 KiB) copied, 0.00402871 s, 52.3 MB/s
+xv6...
+cpu1: starting 1

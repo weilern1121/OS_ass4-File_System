@@ -663,6 +663,33 @@ ls.c.s:
 	$(MAKE) -f CMakeFiles/ass4.dir/build.make CMakeFiles/ass4.dir/ls.c.s
 .PHONY : ls.c.s
 
+lsnd.o: lsnd.c.o
+
+.PHONY : lsnd.o
+
+# target to build an object file
+lsnd.c.o:
+	$(MAKE) -f CMakeFiles/ass4.dir/build.make CMakeFiles/ass4.dir/lsnd.c.o
+.PHONY : lsnd.c.o
+
+lsnd.i: lsnd.c.i
+
+.PHONY : lsnd.i
+
+# target to preprocess a source file
+lsnd.c.i:
+	$(MAKE) -f CMakeFiles/ass4.dir/build.make CMakeFiles/ass4.dir/lsnd.c.i
+.PHONY : lsnd.c.i
+
+lsnd.s: lsnd.c.s
+
+.PHONY : lsnd.s
+
+# target to generate assembly for a file
+lsnd.c.s:
+	$(MAKE) -f CMakeFiles/ass4.dir/build.make CMakeFiles/ass4.dir/lsnd.c.s
+.PHONY : lsnd.c.s
+
 main.o: main.c.o
 
 .PHONY : main.o
@@ -1461,6 +1488,9 @@ help:
 	@echo "... ls.o"
 	@echo "... ls.i"
 	@echo "... ls.s"
+	@echo "... lsnd.o"
+	@echo "... lsnd.i"
+	@echo "... lsnd.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
