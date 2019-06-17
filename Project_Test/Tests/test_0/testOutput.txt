@@ -1,2 +1,0 @@
-init: starting sh
-$ fork test

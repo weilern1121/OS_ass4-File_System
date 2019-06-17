@@ -77,12 +77,14 @@ int main(int argc, char *argv[]){
       exit();
     }else{
       printf(1,"waiting 2 min for all files to be created\n");
-      sleep(12000);
+      sleep(3000);
     }
+  printf(1,"DONE waiting 2 min for all files to be created\n");
 
-    executeLSNDdataRetrieve();
-    
-    assertFileInLSNDparsingData(theFile,0);
+  executeLSNDdataRetrieve();
+  printf(1,"wFUCKKKaiting 2 min for all files to be created\n");
+
+  assertFileInLSNDparsingData(theFile,0);
 
     printf(1,"%s test exiting...\n",argv[0]);
     exit();
@@ -121,6 +123,7 @@ void executeLSNDdataRetrieve(){
 
   printFromLSND();
   executeLSND(fd);
+  printf(1 , "WE HAVE IN FD %d \n" , fd[READ]);
   parseFromFD(fd[READ]);
   printInodesData();
 
@@ -182,9 +185,14 @@ void parseFromFD(int fd){
   int openParenNum = 0;
   int closeParenNum = 0;
   int commaNum = 0;
-  
-  while((n = read(fd, buf, 512)) > 0){
+
+    printf(1 , "BEFORE WHILE\n" );
+    while((n = read(fd, buf, 512)) > 0){
+      printf(1 , "IN WHILE\n" );
     for(int i = 0;i < n;i++){
+        printf(1 , "WE HAVE IN BUFF %s ROUND %d \n" , buf[i] , i);
+
+
       if(buf[i] == '('){
         openParenNum++;
       }else if(buf[i] == ','){
@@ -343,8 +351,18 @@ void assertFileInLSNDparsingData(char *name, int major){
   printf(1,"\n\nPrinting file stat to be asserted in lsnd parsing data\n");
   printFileStat(st);
 
+    printf(1,"\n %d  =FUCK=   %d\n", numOfInodesData , numOfInodesData);
   for(int i = 0;i < numOfInodesData;i++){
-    if(fileTypeToInt(inodesData[i].type) == st.type && 
+      printf(1,"\n %d  ==   %d", fileTypeToInt(inodesData[i].type) , st.type);
+      printf(1,"\n %d  ==   %d", inodesData[i].device , st.dev);
+      printf(1,"\n %d  ==   %d", inodesData[i].inodeNumber , st.ino);
+      printf(1,"\n %d  ==   %d", inodesData[i].hard_links ,st.nlink);
+      printf(1,"\n %d  ==   %d", inodesData[i].blocks_used ,( (st.size / BSIZE) + ((st.size % BSIZE) != 0 ? 1 : 0)));
+      printf(1,"\n %d  ==   %d", inodesData[i].major == major);
+      printf(1,"\n %d  ==   %d", inodesData[i].isValid , 1);
+
+
+      if(fileTypeToInt(inodesData[i].type) == st.type &&
        inodesData[i].device == st.dev &&
        inodesData[i].inodeNumber == st.ino &&
        inodesData[i].hard_links == st.nlink &&

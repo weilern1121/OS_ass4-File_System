@@ -1,0 +1,40 @@
+init: starting sh
+$ 
+generalcheck19 test starting...
+waiting 2 min for all files to be created
+finished open files in sub process
+DONE waiting 2 min for all files to be created
+
+
+Printing lsnd raw data
+
+
+ 1 1 1 1 ( 0, 0 ) 1 1 
+ 1 14 1 3 ( 1, 1 ) 1 0 
+ 1 15 1 2 ( 0, 0 ) 1 4 
+WE HAVE IN FD 3 
+BEFO
+ 1 1 1 1 ( 0, 0 ) 1 1 
+ 1 14 1 3 ( 1, 1 ) 1 0 
+ 1 15 1 2 ( 0, 0 ) 1 4 
+RE WHILE
+
+
+Printing parsed data from lsnd...
+wFUCKKKaiting 2 min for all files to be created
+
+
+Printing file stat to be asserted in lsnd parsing data
+
+------------------------------------
+Device: 1
+Inum: 15
+Type: 2
+Hard Links: 1
+Size: 2048
+------------------------------------
+
+ 0  =FUCK=   0
+could not find open file in lsnd data
+zombie!
+$ $ Finished Yehonatan Peleg Test, quiting...
