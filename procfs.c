@@ -60,7 +60,6 @@ char *itoa(int num, char *str) {
         char tmp = str[start];
         str[start] = str[end];
         str[end] = tmp;
-//        swap(*(str+start), *(str+end));
         start++;
         end--;
     }
@@ -97,7 +96,6 @@ void cleanName(char *name) {
 }
 
 
-//todo - not sure that need to send IPnum as argument to this specific func!
 int ReadFromMemInodes(char *designBuffer, int IPinum) {
 
     int currDirent = 0;
@@ -168,10 +166,6 @@ int ReadFromFileStat(char *designBuffer, int IPinum) {
     itoa(total, tmp);
     writeToBuff(tmp, designBuffer);
     cleanName(tmp);
-//    writeToBuff(" = ", designBuffer); //TODO- WE NEED TO CONSIDER THIS PRINTINGS AGAIN
-//    itoa((ref / total), tmp);
-//    writeToBuff(tmp, designBuffer);
-//    writeToBuff(" !\n", designBuffer);
     writeToBuff("\n", designBuffer);
 
     return strlen(designBuffer);
@@ -188,8 +182,7 @@ int ReadFromInodeInfo(char *designBuffer, int IPinum) {
         writeDirentToBuff(i, tmp, VIRTUALINODEINFO + validInum[i], designBuffer);
         cleanName(tmp);
     }
-    //TODO WE MUST OVERVIEW THIS LINE AGAIN
-//    count--;
+
     return sizeof(struct dirent) * count;
 }
 
@@ -373,8 +366,7 @@ int ReadPid(char *designBuffer, int IPinum) {
     if (IPinum >= sbInodes + PROCINODES) {
         proc = ((IPinum - sbInodes) / PROCINODES) - 1;
     }
-
-    //TODO - MAYBE REMOVE CURRPROC -> WE'RE NOT USING IT!
+    //VALIDATION - CHECK THAT PROC EXISTS
     currproc = getProc(proc);
     if (!currproc) //validation check
         panic("ERROR - ReadPidStatus: PROC IS NULL!");
@@ -475,9 +467,9 @@ procfsisdir(struct inode *ip) {
 void
 procfsiread(struct inode *dp, struct inode *ip) {
     ip->major = PROCFS;
-    ip->valid = VALID;  //todo - maybe need to turn on flag ->  |=0x2
+    ip->valid = VALID;
     ip->type = T_DEV;
-    ip->nlink = 1;//todo
+    ip->nlink = 1;
 }
 
 int

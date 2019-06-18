@@ -168,12 +168,15 @@ mkfs: mkfs.c fs.h
 
 UPROGS=\
 	_quitXV6\
-	_generalcheck5\
+	_generalcheck23\
 	_sh\
 	_init\
 	_ls\
 	_echo\
 	_cat\
+	_mkdir\
+	_ln\
+	_lsnd\
 
 fs.img: mkfs README $(UPROGS)
 	./mkfs fs.img README $(UPROGS)
@@ -283,11 +286,11 @@ _quitXV6: $(ULIB)
 	objdump -S _quitXV6 > quitXV6.asm
 	$(OBJDUMP) -t _quitXV6 | sed '1,/SYMBOL TABLE/d; s/ .* / /; /^$$/d' > quitXV6.sym
 
-_generalcheck5: $(ULIB)
-	gcc -Werror -fno-pic -static -fno-builtin -fno-strict-aliasing -O2 -Wall -MD -ggdb -m32 -fno-omit-frame-pointer -fno-stack-protector -fno-pie -no-pie -c -o generalcheck5.o ./Project_Test/XV6_Tests/generalcheck5.c
-	ld -m elf_i386 -N -e main -Ttext 0 -o _generalcheck5 generalcheck5.o $(ULIB)
-	objdump -S _generalcheck5 > generalcheck5.asm
-	$(OBJDUMP) -t _generalcheck5 | sed '1,/SYMBOL TABLE/d; s/ .* / /; /^$$/d' > generalcheck5.sym
+_generalcheck23: $(ULIB)
+	gcc -Werror -fno-pic -static -fno-builtin -fno-strict-aliasing -O2 -Wall -MD -ggdb -m32 -fno-omit-frame-pointer -fno-stack-protector -fno-pie -no-pie -c -o generalcheck23.o ./Project_Test/XV6_Tests/generalcheck23.c
+	ld -m elf_i386 -N -e main -Ttext 0 -o _generalcheck23 generalcheck23.o $(ULIB)
+	objdump -S _generalcheck23 > generalcheck23.asm
+	$(OBJDUMP) -t _generalcheck23 | sed '1,/SYMBOL TABLE/d; s/ .* / /; /^$$/d' > generalcheck23.sym
 
 _sh: $(ULIB)
 	gcc -Werror -fno-pic -static -fno-builtin -fno-strict-aliasing -O2 -Wall -MD -ggdb -m32 -fno-omit-frame-pointer -fno-stack-protector -fno-pie -no-pie -c -o sh.o sh.c
@@ -318,4 +321,22 @@ _cat: $(ULIB)
 	ld -m elf_i386 -N -e main -Ttext 0 -o _cat cat.o $(ULIB)
 	objdump -S _cat > cat.asm
 	$(OBJDUMP) -t _cat | sed '1,/SYMBOL TABLE/d; s/ .* / /; /^$$/d' > cat.sym
+
+_mkdir: $(ULIB)
+	gcc -Werror -fno-pic -static -fno-builtin -fno-strict-aliasing -O2 -Wall -MD -ggdb -m32 -fno-omit-frame-pointer -fno-stack-protector -fno-pie -no-pie -c -o mkdir.o mkdir.c
+	ld -m elf_i386 -N -e main -Ttext 0 -o _mkdir mkdir.o $(ULIB)
+	objdump -S _mkdir > mkdir.asm
+	$(OBJDUMP) -t _mkdir | sed '1,/SYMBOL TABLE/d; s/ .* / /; /^$$/d' > mkdir.sym
+
+_ln: $(ULIB)
+	gcc -Werror -fno-pic -static -fno-builtin -fno-strict-aliasing -O2 -Wall -MD -ggdb -m32 -fno-omit-frame-pointer -fno-stack-protector -fno-pie -no-pie -c -o ln.o ln.c
+	ld -m elf_i386 -N -e main -Ttext 0 -o _ln ln.o $(ULIB)
+	objdump -S _ln > ln.asm
+	$(OBJDUMP) -t _ln | sed '1,/SYMBOL TABLE/d; s/ .* / /; /^$$/d' > ln.sym
+
+_lsnd: $(ULIB)
+	gcc -Werror -fno-pic -static -fno-builtin -fno-strict-aliasing -O2 -Wall -MD -ggdb -m32 -fno-omit-frame-pointer -fno-stack-protector -fno-pie -no-pie -c -o lsnd.o lsnd.c
+	ld -m elf_i386 -N -e main -Ttext 0 -o _lsnd lsnd.o $(ULIB)
+	objdump -S _lsnd > lsnd.asm
+	$(OBJDUMP) -t _lsnd | sed '1,/SYMBOL TABLE/d; s/ .* / /; /^$$/d' > lsnd.sym
 

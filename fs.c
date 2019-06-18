@@ -167,11 +167,10 @@ struct {
     struct inode inode[NINODE];
 } icache;
 
-char* lsndFS(){
+void lsndFS(){
 
     int validInum[NINODE] = {0};
     int count = readIcacheFS(validInum);
-    cprintf("\n");
     for(int i=0; i<count; i++){
         struct inode *ind = getInodeFromChache(validInum[i]);
 
@@ -181,16 +180,15 @@ char* lsndFS(){
                 blocks++;
         }
 
-        cprintf(" %d %d %d %d ( %d, %d ) %d %d \n",
+        cprintf("%d %d %d %d (%d,%d) %d %d \n",
                ind->dev, ind->inum, ind->valid, ind->type,
                ind->major, ind->minor, ind->nlink, blocks);
 
     }
-    return ("1 15 1 2 ( 0, 0 ) 1 4\n");
 }
 
 
-int readIcacheFS(int *arr) {
+int readIcacheFS(int arr[]) {
     struct inode *ip;
     int count = 0, i = 0;
 
@@ -198,7 +196,6 @@ int readIcacheFS(int *arr) {
     for (ip = &icache.inode[0]; ip < &icache.inode[NINODE]; ip++, i++) {
         if (ip->ref > 0)
             arr[count++] = i;
-//            arr[count++] = ip->inum;
     }
     release(&icache.lock);
     return count;

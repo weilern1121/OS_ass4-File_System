@@ -53,9 +53,9 @@ struct inode*   nameiparent(char*, char*);
 int             readi(struct inode*, char*, uint, uint);
 void            stati(struct inode*, struct stat*);
 int             writei(struct inode*, char*, uint, uint);
-int             readIcacheFS( int*);
+int             readIcacheFS( int[]);
 struct inode*   getInodeFromChache(int);
-char*           lsndFS(void);
+void            lsndFS(void);
 
 
 // ide.c

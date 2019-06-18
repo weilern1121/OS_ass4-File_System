@@ -1,0 +1,42 @@
+init: starting sh
+$ 
+generalcheck23 test starting...
+waiting 2 min for all files to be created
+finished open files in sub process
+
+
+Printing lsnd raw data
+
+1 1 1 1 (0,0) 4 2 
+1 14 1 3 (1,1) 1 0 
+1 15 1 2 (0,0) 3 4 
+1 16 1 2 (0,0) 5 8 
+1 17 1 2 (0,0) 7 13 
+1 18 1 1 (0,0) 1 1 
+1 19 1 1 (0,0) 1 1 
+1 20 1 1 (0,0) 1 1 
+1 1 1 1 (0,0) 4 2 
+1 14 1 3 (1,1) 1 0 
+1 15 1 2 (0,0) 3 4 
+1 16 1 2 (0,0) 5 8 
+1 17 1 2 (0,0) 7 13 
+1 18 1 1 (0,0) 1 1 
+1 19 1 1 (0,0) 1 1 
+1 20 1 1 (0,0) 1 1 
+
+
+Printing parsed data from lsnd...
+
+
+Printing file stat to be asserted in lsnd parsing data
+
+------------------------------------
+Device: 1
+Inum: 15
+Type: 2
+Hard Links: 3
+Size: 2048
+------------------------------------
+could not find open file in lsnd data
+$ zombie!
+$ Finished Yehonatan Peleg Test, quiting...

@@ -79,10 +79,10 @@ int main(int argc, char *argv[]){
       printf(1,"waiting 2 min for all files to be created\n");
       sleep(3000);
     }
-  printf(1,"DONE waiting 2 min for all files to be created\n");
+  //printf(1,"DONE waiting 2 min for all files to be created\n");
 
   executeLSNDdataRetrieve();
-  printf(1,"wFUCKKKaiting 2 min for all files to be created\n");
+  //printf(1,"wFUCKKKaiting 2 min for all files to be created\n");
 
   assertFileInLSNDparsingData(theFile,0);
 
@@ -123,7 +123,7 @@ void executeLSNDdataRetrieve(){
 
   printFromLSND();
   executeLSND(fd);
-  printf(1 , "WE HAVE IN FD %d \n" , fd[READ]);
+  //printf(1 , "WE HAVE IN FD %d \n" , fd[READ]);
   parseFromFD(fd[READ]);
   printInodesData();
 
@@ -159,7 +159,7 @@ void printFromLSND(){
   int pid;
   char *args[2];
 
-  printf(1,"\n\nPrinting lsnd raw data\n\n");
+  printf(1,"\n\nPrinting lsnd raw data\n");
   if((pid = fork()) == 0){
     args[0] = "lsnd";
     args[1] = 0;
@@ -186,11 +186,11 @@ void parseFromFD(int fd){
   int closeParenNum = 0;
   int commaNum = 0;
 
-    printf(1 , "BEFORE WHILE\n" );
+    //printf(1 , "BEFORE WHILE\n" );
     while((n = read(fd, buf, 512)) > 0){
-      printf(1 , "IN WHILE\n" );
+      //printf(1 , "IN WHILE\n" );
     for(int i = 0;i < n;i++){
-        printf(1 , "WE HAVE IN BUFF %s ROUND %d \n" , buf[i] , i);
+        //printf(1 , "WE HAVE IN BUFF %s ROUND %d \n" , buf[i] , i);
 
 
       if(buf[i] == '('){
@@ -315,7 +315,7 @@ void parseInodeDataPart(int inodesDataIndex, int partNum, char *buf){
 }
 
 void printInodesData(){
-  printf(1,"\n\nPrinting parsed data from lsnd...\n");
+  printf(1,"Printing parsed data from lsnd...\n");
 
   for(int i = 0;i < numOfInodesData;i++){
     printf(1,"\n-------------------------------\n");
@@ -348,10 +348,10 @@ void assertFileInLSNDparsingData(char *name, int major){
         exit();
   }
 
-  printf(1,"\n\nPrinting file stat to be asserted in lsnd parsing data\n");
+  printf(1,"Printing file stat to be asserted in lsnd parsing data\n");
   printFileStat(st);
 
-    printf(1,"\n %d  =FUCK=   %d\n", numOfInodesData , numOfInodesData);
+    //printf(1,"\n %d  =FUCK=   %d\n", numOfInodesData , numOfInodesData);
   for(int i = 0;i < numOfInodesData;i++){
       printf(1,"\n %d  ==   %d", fileTypeToInt(inodesData[i].type) , st.type);
       printf(1,"\n %d  ==   %d", inodesData[i].device , st.dev);
