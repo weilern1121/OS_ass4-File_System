@@ -130,11 +130,13 @@ void ls(char *path){
   struct dirent de;
   struct stat st;
 
+  printf(1,"\ncheckpoint1\n");
   if((fd = open(path, 0)) < 0){
     printf(2, "ls: cannot open %s\n", path);
     exit();
     return;
   }
+  printf(1,"\ncheckpoint2\n");
 
   if(fstat(fd, &st) < 0){
     printf(2, "ls: cannot stat %s\n", path);
@@ -142,6 +144,7 @@ void ls(char *path){
     exit();
     return;
   }
+  printf(1,"\ncheckpoint3\tpath: %s\n",path);
 
   if(strlen(path) + 1 + DIRSIZ + 1 > sizeof buf){
       printf(1, "ls: path too long\n");
@@ -150,7 +153,11 @@ void ls(char *path){
   strcpy(buf, path);
   p = buf+strlen(buf);
   *p++ = '/';
+  printf(1,"\ncheckpoint4\n");
+
   while(read(fd, &de, sizeof(de)) == sizeof(de)){
+    printf(1,"\ncheckpoint5\n");
+
     memmove(p, de.name, DIRSIZ);
     p[DIRSIZ] = 0;
     if(stat(buf, &st) < 0){

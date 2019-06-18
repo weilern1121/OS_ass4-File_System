@@ -1,0 +1,45 @@
+init: starting sh
+$ 
+generalcheck5 test starting...
+
+------------------------------------
+
+Free fds:	98
+Unique inode fds:	1
+Writeable fds:	1
+Readable fds:	2
+Refs per fds:	13 / 2
+
+------------------------------------
+
+------------------------------------
+
+Free fds:	98
+Unique inode fds:	1
+Writeable fds:	1
+Readable fds:	2
+Refs per fds:	16 / 2
+
+------------------------------------
+
+------------------------------------
+
+Free fds:	98
+Unique inode fds:	1
+Writeable fds:	1
+Readable fds:	2
+Refs per fds:	19 / 2
+
+------------------------------------
+
+------------------------------------
+
+Free fds:	90
+Unique inode fds:	5
+Writeable fds:	5
+Readable fds:	10
+Refs per fds:	30 / 10
+
+------------------------------------
+
+------------------------------

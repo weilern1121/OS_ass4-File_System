@@ -168,42 +168,30 @@ iderw(struct buf *b)
 }
 
 
-//int getIdeQeueue(int *numO, int *readO, int *writeO, int *workblock, int *workdev){
 int getIdeQeueue(int *numO, int *readO, int *writeO, int workblock[], int workdev[]){
   struct buf *pp;
   int numOp = 0, readOp = 0, writeOp = 0;
   int i = 0;
 
   acquire(&idelock);
-  cprintf("GET IDEQUE0\n");
   pp = idequeue;
-  cprintf("GET IDEQUE1\n");
   while(pp && i<NINODE ){
-
     numOp++;
-    if(pp->flags & IDE_CMD_READ) //READ OPERATION
+    if(pp->flags & IDE_CMD_READ || pp->flags==IDE_CMD_READ) //READ OPERATION
       readOp++;
-    cprintf("GET IDEQUE2 %d , %d , %d  %d \n" , pp->flags , pp->blockno, pp->dev , pp->refcnt );
-    if(pp->flags & IDE_CMD_WRITE) //WRITE OPERATION
+    if(pp->flags & IDE_CMD_WRITE || pp->flags==IDE_CMD_WRITE) //WRITE OPERATION
       writeOp++;
-    cprintf("GET IDEQUE3\n");
     workblock[i] = pp->blockno;
-    cprintf("GET IDEQUE4\n");
     workdev[i] = pp->dev;
-    cprintf("GET IDEQUE5\n");
-
+    //NEXT ITERATION
     i++;
     pp=pp->next;
   }
-
 
   *numO = numOp;
   *readO = readOp;
   *writeO = writeOp;
 
   release(&idelock);
-
-  cprintf("GET IDEQUE FINISH RETURN\n");
   return i;
-
 }
